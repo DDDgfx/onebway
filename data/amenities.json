@@ -1,0 +1,4260 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.047331,40.718913 ]
+     },
+     "properties": {
+     "id":"amenity-1",
+     "Name":"Jersey City Free Public Library",
+     "Category":"Attractions",
+     "Address":"472 Jersey Ave, Jersey City, NJ 07302",
+     "Google Business URL":"https://goo.gl/maps/ganfP8gkYhd9AKcx7",
+     "Number":472,
+     "Street":"Jersey Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.047143,40.718062 ]
+     },
+     "properties": {
+     "id":"amenity-2",
+     "Name":"Van Vorst Park",
+     "Category":"Attractions",
+     "Address":"257-287 Montgomery St, Jersey City, NJ 07302",
+     "Google Business URL":"https://goo.gl/maps/4j6puHQCFu9ZabDs5",
+     "Number":257,
+     "Street":"Montgomery St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.038177,40.712479 ]
+     },
+     "properties": {
+     "id":"amenity-3",
+     "Name":"Morris Canal Park",
+     "Category":"Attractions",
+     "Address":"158 Washington St, Jersey City, NJ 07302",
+     "Google Business URL":"https://goo.gl/maps/WHMY4hLw5djCNcKR8",
+     "Number":158,
+     "Street":"Washington St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.034904,40.712803 ]
+     },
+     "properties": {
+     "id":"amenity-4",
+     "Name":"J. Owen Grundy Park",
+     "Category":"Attractions",
+     "Address":"Hudson St, Jersey City, NJ 07302",
+     "Google Business URL":"https://goo.gl/maps/rACUhtNZs3N1kvA78",
+     "Number":null,
+     "Street":"Hudson St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.040139,40.712878 ]
+     },
+     "properties": {
+     "id":"amenity-5",
+     "Name":"Newport Yacht Club and Marina",
+     "Category":"Attractions",
+     "Address":"140 Dudley St, Jersey City, NJ 07302",
+     "Google Business URL":"https://goo.gl/maps/iSwjbdSBRRahAFGw6",
+     "Number":140,
+     "Street":"Dudley St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.037168,40.732728 ]
+     },
+     "properties": {
+     "id":"amenity-6",
+     "Name":"Newport Green Park",
+     "Category":"Attractions",
+     "Address":"Green Park, 14th St, Jersey City, NJ 07310",
+     "Google Business URL":"https://goo.gl/maps/KHoZUcGg711XsXY18",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7310,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.046081,40.727886 ]
+     },
+     "properties": {
+     "id":"amenity-7",
+     "Name":"Hamilton Park",
+     "Category":"Attractions",
+     "Address":"25 W Hamilton Pl, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/hMAsRSeqZUQdUXjj9",
+     "Number":25,
+     "Street":"W Hamilton Pl",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.059901,40.694499 ]
+     },
+     "properties": {
+     "id":"amenity-8",
+     "Name":"Liberty State Park",
+     "Category":"Attractions",
+     "Address":"200 Morris Pesin Dr, Jersey City, NJ 07305, United States",
+     "Google Business URL":"https://goo.gl/maps/xgAFJ4qabHrCKnNH6",
+     "Number":200,
+     "Street":"Morris Pesin Dr",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7305,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.052059,40.710075 ]
+     },
+     "properties": {
+     "id":"amenity-9",
+     "Name":"Empty Sky Memorial",
+     "Category":"Attractions",
+     "Address":"1 Audrey Zapp Dr, Jersey City, NJ 07305, United States",
+     "Google Business URL":"https://goo.gl/maps/zBusKZfHvCgSb1n19",
+     "Number":1,
+     "Street":"Audrey Zapp Dr",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7305,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.060975,40.710925 ]
+     },
+     "properties": {
+     "id":"amenity-10",
+     "Name":"Statue Cruises",
+     "Category":"Attractions",
+     "Address":"Pine St, Jersey City, NJ 07304, United States",
+     "Google Business URL":"https://goo.gl/maps/pME7xz3k8dyhpz8P6",
+     "Number":null,
+     "Street":"Pine St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7304,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.055972,40.709509 ]
+     },
+     "properties": {
+     "id":"amenity-11",
+     "Name":"Liberty Science Center",
+     "Category":"Attractions",
+     "Address":"222 Jersey City Blvd, Jersey City, NJ 07305, United States",
+     "Google Business URL":"https://goo.gl/maps/CKC8Q84ZSqRmb3id9",
+     "Number":222,
+     "Street":"Jersey City Blvd",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7305,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.070498,40.69929 ]
+     },
+     "properties": {
+     "id":"amenity-12",
+     "Name":"Liberty National Golf Course",
+     "Category":"Attractions",
+     "Address":"100 Caven Point Rd, Jersey City, NJ 07305, United States",
+     "Google Business URL":"https://goo.gl/maps/BS3nJfN1Q2K8WXea7",
+     "Number":74,
+     "Street":"Caven Point Rd",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7305,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.034904,40.712803 ]
+     },
+     "properties": {
+     "id":"amenity-13",
+     "Name":"Jersey City 9-11 Memorial",
+     "Category":"Attractions",
+     "Address":"Hudson River Waterfront Walkway, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/twSuiY1AVAavY2ne9",
+     "Number":null,
+     "Street":"Hudson St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.040139,40.712878 ]
+     },
+     "properties": {
+     "id":"amenity-14",
+     "Name":"Manhattan Yacht Club",
+     "Category":"Attractions",
+     "Address":"140 Dudley St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/tRo9sHyuS8WyrZdP9",
+     "Number":140,
+     "Street":"Dudley St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.032724,40.720216 ]
+     },
+     "properties": {
+     "id":"amenity-15",
+     "Name":"New York Sports Clubs",
+     "Category":"Fitness",
+     "Address":"147 Harborside Financial Center Platform 147 Plaza Two, Jersey City, NJ 07311, United States",
+     "Google Business URL":"https://goo.gl/maps/CTHBH9dGofWur2R18",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7311,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.039921,40.721022 ]
+     },
+     "properties": {
+     "id":"amenity-16",
+     "Name":"CKO Kickboxing",
+     "Category":"Fitness",
+     "Address":"150 Bay St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/DNYcY6vYRi9jcmTK6",
+     "Number":150,
+     "Street":"Bay St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.03559,40.726915 ]
+     },
+     "properties": {
+     "id":"amenity-17",
+     "Name":"Club Metro USA",
+     "Category":"Fitness",
+     "Address":"525 Washington Blvd, Jersey City, NJ 07310, United States",
+     "Google Business URL":"https://goo.gl/maps/Jnpu4A5HFUTQXh4m7",
+     "Number":525,
+     "Street":"Washington Blvd",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7310,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.042259,40.719496 ]
+     },
+     "properties": {
+     "id":"amenity-18",
+     "Name":"Base",
+     "Category":"Fitness",
+     "Address":"60 Christopher Columbus Dr, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/citSuDKPvwHMv3gF8",
+     "Number":60,
+     "Street":"Christopher Columbus Dr",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.049145,40.724256 ]
+     },
+     "properties": {
+     "id":"amenity-19",
+     "Name":"JC Barre",
+     "Category":"Fitness",
+     "Address":"419 Monmouth St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/EZfndSftCgbQ139r8",
+     "Number":419,
+     "Street":"Monmouth St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044608,40.720989 ]
+     },
+     "properties": {
+     "id":"amenity-20",
+     "Name":"Jane DO Jersey City Studio",
+     "Category":"Fitness",
+     "Address":"160 Newark Ave 3rd floor, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/JaneDOJerseyCity?share",
+     "Number":160,
+     "Street":"Newark Ave",
+     "Unit Type":"Fl",
+     "Unit Number":3,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.032967,40.71676 ]
+     },
+     "properties": {
+     "id":"amenity-21",
+     "Name":"CrossFit Jersey City",
+     "Category":"Fitness",
+     "Address":"109 Christopher Columbus Dr, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/CrossFitJerseyCity?share",
+     "Number":109,
+     "Street":"Christopher Columbus Dr",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044267,40.71696 ]
+     },
+     "properties": {
+     "id":"amenity-22",
+     "Name":"Maximum Motion Fitness",
+     "Category":"Fitness",
+     "Address":"262 Grove St, Jersey City, NJ 07302",
+     "Google Business URL":"https://goo.gl/maps/5r1b9hKS5vkpEMZv8",
+     "Number":262,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044376,40.717776 ]
+     },
+     "properties": {
+     "id":"amenity-23",
+     "Name":"Yoga Shunya",
+     "Category":"Fitness",
+     "Address":"275 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/RZMueiSW1FfbD1P98",
+     "Number":275,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043125,40.720536 ]
+     },
+     "properties": {
+     "id":"amenity-24",
+     "Name":"SunMoon Hot Yoga",
+     "Category":"Fitness",
+     "Address":"341 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/suryajc?share",
+     "Number":341,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043603,40.727488 ]
+     },
+     "properties": {
+     "id":"amenity-25",
+     "Name":"Hamilton Health & Fitness",
+     "Category":"Fitness",
+     "Address":"161 Erie St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/HHFJC?share",
+     "Number":161,
+     "Street":"Erie St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036344,40.719776 ]
+     },
+     "properties": {
+     "id":"amenity-26",
+     "Name":"F45 Training",
+     "Category":"Fitness",
+     "Address":"65 Bay St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/7nQiP3dQVQoHDx3X6",
+     "Number":65,
+     "Street":"Bay St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036344,40.719776 ]
+     },
+     "properties": {
+     "id":"amenity-27",
+     "Name":"Cyclebar",
+     "Category":"Fitness",
+     "Address":"65 Bay St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/b6qXMS3TaxPKkFVXA",
+     "Number":65,
+     "Street":"Bay St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.038436,40.721171 ]
+     },
+     "properties": {
+     "id":"amenity-28",
+     "Name":"CRAG",
+     "Category":"Fitness",
+     "Address":"127 1st St #2918, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/ifLEQ2ZBDmAvxPEE6",
+     "Number":127,
+     "Street":"1st St",
+     "Unit Type":"#",
+     "Unit Number":2918,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.039719,40.721575 ]
+     },
+     "properties": {
+     "id":"amenity-29",
+     "Name":"Pilates Haus",
+     "Category":"Fitness",
+     "Address":"160 1st St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/YMV7ZYKugpAvTCEM6",
+     "Number":160,
+     "Street":"1st St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.039921,40.721022 ]
+     },
+     "properties": {
+     "id":"amenity-30",
+     "Name":"CKO Kickboxing",
+     "Category":"Fitness",
+     "Address":"150 Bay St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/DNYcY6vYRi9jcmTK6",
+     "Number":150,
+     "Street":"Bay St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.040182,40.720163 ]
+     },
+     "properties": {
+     "id":"amenity-31",
+     "Name":"Powerflow Yoga",
+     "Category":"Fitness",
+     "Address":"160 Morgan St #5, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/5shbc2SFFS1N2wxn7",
+     "Number":160,
+     "Street":"Morgan St",
+     "Unit Type":"Ste",
+     "Unit Number":5,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.042259,40.719496 ]
+     },
+     "properties": {
+     "id":"amenity-32",
+     "Name":"Base Gym",
+     "Category":"Fitness",
+     "Address":"60 Christopher Columbus Dr, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/dN6mg4BHfLjBMtbt6",
+     "Number":60,
+     "Street":"Christopher Columbus Dr",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043125,40.720536 ]
+     },
+     "properties": {
+     "id":"amenity-33",
+     "Name":"Surya Yoga Academy",
+     "Category":"Fitness",
+     "Address":"341 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/suryajc?share",
+     "Number":341,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044608,40.720989 ]
+     },
+     "properties": {
+     "id":"amenity-34",
+     "Name":"Jane Do",
+     "Category":"Fitness",
+     "Address":"160 Newark Ave 3rd floor, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/JaneDOJerseyCity?share",
+     "Number":160,
+     "Street":"Newark Ave",
+     "Unit Type":"Fl",
+     "Unit Number":3,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.045254,40.720874 ]
+     },
+     "properties": {
+     "id":"amenity-35",
+     "Name":"Jivamukti Yoga",
+     "Category":"Fitness",
+     "Address":"171 Newark Ave 2nd Floor, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/mvKt2KDqsgajP89k9",
+     "Number":171,
+     "Street":"Newark Ave",
+     "Unit Type":"Fl",
+     "Unit Number":2,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.032967,40.71676 ]
+     },
+     "properties": {
+     "id":"amenity-36",
+     "Name":"Crossfit Jersey City",
+     "Category":"Fitness",
+     "Address":"109 Christopher Columbus Dr, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/CrossFitJerseyCity?share",
+     "Number":109,
+     "Street":"Christopher Columbus Dr",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044376,40.717776 ]
+     },
+     "properties": {
+     "id":"amenity-37",
+     "Name":"Yoga Shunya",
+     "Category":"Fitness",
+     "Address":"275 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/nc4Pqc1PSX3susWRA",
+     "Number":275,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044419,40.716411 ]
+     },
+     "properties": {
+     "id":"amenity-38",
+     "Name":"At the Beginning Fitness",
+     "Category":"Fitness",
+     "Address":"244 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/UbzqY6ex6eYHGG1M7",
+     "Number":244,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044267,40.71696 ]
+     },
+     "properties": {
+     "id":"amenity-39",
+     "Name":"Maximum Motion Fitness",
+     "Category":"Fitness",
+     "Address":"262 Grove St, Jersey City, NJ 07302",
+     "Google Business URL":"https://goo.gl/maps/5r1b9hKS5vkpEMZv8",
+     "Number":262,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.04133,40.720455 ]
+     },
+     "properties": {
+     "id":"amenity-40",
+     "Name":"WeStrong Strength & Conditioning",
+     "Category":"Fitness",
+     "Address":"41 Marin Blvd, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/wYdAboT9xQzvuKXX8",
+     "Number":null,
+     "Street":"Marin Blvd",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.039068,40.712872 ]
+     },
+     "properties": {
+     "id":"amenity-41",
+     "Name":"Fitness Blueprint",
+     "Category":"Fitness",
+     "Address":"100 Dudley St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/ZwAsnUaH84StWan16",
+     "Number":100,
+     "Street":"Dudley St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.034947,40.712628 ]
+     },
+     "properties": {
+     "id":"amenity-42",
+     "Name":"Own Your Fitness",
+     "Category":"Fitness",
+     "Address":"33 Hudson St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/personaltrainerjc?share",
+     "Number":33,
+     "Street":"Hudson St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.033853,40.71445 ]
+     },
+     "properties": {
+     "id":"amenity-43",
+     "Name":"Row House",
+     "Category":"Fitness",
+     "Address":"70 Hudson St Suite 125, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/iSHHYp4TMrfumCLs5",
+     "Number":70,
+     "Street":"Hudson St",
+     "Unit Type":"Ste",
+     "Unit Number":125,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.037919,40.715781 ]
+     },
+     "properties": {
+     "id":"amenity-44",
+     "Name":"The Body Lab",
+     "Category":"Fitness",
+     "Address":"239 Washington St, Jersey City, NJ 07302, USA",
+     "Google Business URL":"https://goo.gl/maps/wTqKwdmkFHG34Wjx5",
+     "Number":239,
+     "Street":"Washington St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043603,40.727488 ]
+     },
+     "properties": {
+     "id":"amenity-45",
+     "Name":"Hamilton Health & Fitness",
+     "Category":"Fitness",
+     "Address":"161 Erie St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/HHFJC?share",
+     "Number":161,
+     "Street":"Erie St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.046266,40.727605 ]
+     },
+     "properties": {
+     "id":"amenity-46",
+     "Name":"Project Pilates",
+     "Category":"Fitness",
+     "Address":"231 Pavonia Ave, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/HXXv2z6f5GFYokC77",
+     "Number":231,
+     "Street":"Pavonia Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044209,40.728637 ]
+     },
+     "properties": {
+     "id":"amenity-47",
+     "Name":"My Gym",
+     "Category":"Fitness",
+     "Address":"252 9th St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/uFqVv4VoHQsobcc39",
+     "Number":252,
+     "Street":"9th St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.050528,40.726484 ]
+     },
+     "properties": {
+     "id":"amenity-48",
+     "Name":"RushCycling",
+     "Category":"Fitness",
+     "Address":"189 Brunswick St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/iHzq5Vuq8fnKvrap7",
+     "Number":189,
+     "Street":"Brunswick St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.052409,40.726354 ]
+     },
+     "properties": {
+     "id":"amenity-49",
+     "Name":"The Little Gym of Jersey City",
+     "Category":"Fitness",
+     "Address":"380 Newark Ave Units 101 & 102, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/thelittlegymjerseycity?share",
+     "Number":380,
+     "Street":"Newark Ave",
+     "Unit Type":"Ste",
+     "Unit Number":102,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.050528,40.726484 ]
+     },
+     "properties": {
+     "id":"amenity-50",
+     "Name":"Power-House Pilates",
+     "Category":"Fitness",
+     "Address":"189 Brunswick St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/mcQYnuPLPoggjdi4A",
+     "Number":189,
+     "Street":"Brunswick St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.049145,40.724256 ]
+     },
+     "properties": {
+     "id":"amenity-51",
+     "Name":"JC Barre",
+     "Category":"Fitness",
+     "Address":"419 Monmouth St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/EZfndSftCgbQ139r8",
+     "Number":419,
+     "Street":"Monmouth St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.03119,40.716119 ]
+     },
+     "properties": {
+     "id":"amenity-52",
+     "Name":"Vu",
+     "Category":"Dining",
+     "Address":"2 Exchange Pl, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/uJPPUJ1Y1VNV3gCr6",
+     "Number":2,
+     "Street":"Exchange Pl",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.035001,40.716073 ]
+     },
+     "properties": {
+     "id":"amenity-53",
+     "Name":"Au Bon Pain",
+     "Category":"Dining",
+     "Address":"101 Hudson St #1, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/FaGuVy56xLrXFE6d9",
+     "Number":101,
+     "Street":"Hudson St",
+     "Unit Type":"Unit",
+     "Unit Number":1,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.031736,40.721566 ]
+     },
+     "properties": {
+     "id":"amenity-54",
+     "Name":"Lokal Eatery & Bar",
+     "Category":"Dining",
+     "Address":"2 2nd St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/lokal-eatery-bar?share",
+     "Number":2,
+     "Street":"2nd St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.034687,40.720685 ]
+     },
+     "properties": {
+     "id":"amenity-55",
+     "Name":"DomoDomo",
+     "Category":"Dining",
+     "Address":"200 Greene St, Jersey City, NJ 07311, United States",
+     "Google Business URL":"https://g.page/domodomo-jersey-city?share",
+     "Number":200,
+     "Street":"Greene St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7311,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.033331,40.716671 ]
+     },
+     "properties": {
+     "id":"amenity-56",
+     "Name":"Gregory's Coffee",
+     "Category":"Dining",
+     "Address":"10 Exchange Pl, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/UzEXhE8NjL67m2su9",
+     "Number":10,
+     "Street":"Exchange Pl",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.033331,40.716671 ]
+     },
+     "properties": {
+     "id":"amenity-57",
+     "Name":"Exchange Place Market",
+     "Category":"Dining",
+     "Address":"10 Exchange Pl, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/K71kicYXGhjRFxhM7",
+     "Number":10,
+     "Street":"Exchange Pl",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.033733,40.726289 ]
+     },
+     "properties": {
+     "id":"amenity-58",
+     "Name":"Starbucks",
+     "Category":"Dining",
+     "Address":"111 Town Square Pl, Jersey City, NJ 07310, United States",
+     "Google Business URL":"https://goo.gl/maps/MtNjr1Vo1uUM5WjC9",
+     "Number":111,
+     "Street":"Town Square Pl",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7310,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.033868,40.715918 ]
+     },
+     "properties": {
+     "id":"amenity-59",
+     "Name":"Rooftop at Exchange Place",
+     "Category":"Dining",
+     "Address":"1 Exchange Pl, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/rooftopxp?share",
+     "Number":1,
+     "Street":"Exchange Pl",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.033397,40.715854 ]
+     },
+     "properties": {
+     "id":"amenity-60",
+     "Name":"Potbelly",
+     "Category":"Dining",
+     "Address":"15 Exchange Pl #100, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/Tx1ToMx2uvEG1nw48",
+     "Number":15,
+     "Street":"Exchange Pl",
+     "Unit Type":"#",
+     "Unit Number":100,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.034687,40.720685 ]
+     },
+     "properties": {
+     "id":"amenity-61",
+     "Name":"Ample Hills Creamery",
+     "Category":"Dining",
+     "Address":"200 Greene St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/249iGMXJstUcd7Sg7",
+     "Number":200,
+     "Street":"Greene St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7311,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.034687,40.720685 ]
+     },
+     "properties": {
+     "id":"amenity-62",
+     "Name":"9 Bar Cafe at Urby",
+     "Category":"Dining",
+     "Address":"200 Greene St, Jersey City, NJ 07311, United States",
+     "Google Business URL":"https://goo.gl/maps/xG3MkPkPe2wMufFJ6",
+     "Number":200,
+     "Street":"Greene St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7311,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.035825,40.719968 ]
+     },
+     "properties": {
+     "id":"amenity-63",
+     "Name":"Maggie's Farm Espresso",
+     "Category":"Dining",
+     "Address":"88 Morgan St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/QeKvBnJtC8TSikJ77",
+     "Number":88,
+     "Street":"Morgan St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.034826,40.720132 ]
+     },
+     "properties": {
+     "id":"amenity-64",
+     "Name":"Hudson's Grill",
+     "Category":"Dining",
+     "Address":"160 Greene St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/sp5YA5M19okMwYmU8",
+     "Number":160,
+     "Street":"Greene St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.035001,40.716073 ]
+     },
+     "properties": {
+     "id":"amenity-65",
+     "Name":"Amiya",
+     "Category":"Dining",
+     "Address":"101 Hudson St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/V553q3dz46aVKe4ZA",
+     "Number":101,
+     "Street":"Hudson St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.034986,40.718622 ]
+     },
+     "properties": {
+     "id":"amenity-66",
+     "Name":"Porto Leggero",
+     "Category":"Dining",
+     "Address":"185 Hudson St, Jersey City, NJ 07311, United States",
+     "Google Business URL":"https://goo.gl/maps/wdttkZ1aBwSooXLX9",
+     "Number":185,
+     "Street":"Hudson St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7311,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.035254,40.716919 ]
+     },
+     "properties": {
+     "id":"amenity-67",
+     "Name":"Cava",
+     "Category":"Dining",
+     "Address":"30 Montgomery St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/AjE7SoVFR4ft1HX79",
+     "Number":30,
+     "Street":"Montgomery St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.035597,40.716335 ]
+     },
+     "properties": {
+     "id":"amenity-68",
+     "Name":"City Diner",
+     "Category":"Dining",
+     "Address":"31 Montgomery St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/HULpw5F3nZEYDsVb9",
+     "Number":31,
+     "Street":"Montgomery St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.035001,40.716073 ]
+     },
+     "properties": {
+     "id":"amenity-69",
+     "Name":"Five Guys",
+     "Category":"Dining",
+     "Address":"101 Hudson St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/cPZ73ahw5X2WQmMo9",
+     "Number":101,
+     "Street":"Hudson St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036029,40.716009 ]
+     },
+     "properties": {
+     "id":"amenity-70",
+     "Name":"Iron Monkey",
+     "Category":"Dining",
+     "Address":"99 Greene St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/nq3arHSjMX34cLKP9",
+     "Number":99,
+     "Street":"Greene St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036389,40.715509 ]
+     },
+     "properties": {
+     "id":"amenity-71",
+     "Name":"Honshu Sushi",
+     "Category":"Dining",
+     "Address":"95 Greene St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/Honshujc?share",
+     "Number":95,
+     "Street":"Greene St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.035285,40.714746 ]
+     },
+     "properties": {
+     "id":"amenity-72",
+     "Name":"Greene Hook Bar & Kitchen",
+     "Category":"Dining",
+     "Address":"70 Greene St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/8KmU8n55qVR6RrJa9",
+     "Number":70,
+     "Street":"Greene St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.03625,40.714614 ]
+     },
+     "properties": {
+     "id":"amenity-73",
+     "Name":"Rumi Turkish Grill",
+     "Category":"Dining",
+     "Address":"67 Greene St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/TuE28KwvhWcjVC6MA",
+     "Number":67,
+     "Street":"Greene St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036502,40.713881 ]
+     },
+     "properties": {
+     "id":"amenity-74",
+     "Name":"Sky Thai",
+     "Category":"Dining",
+     "Address":"62 Morris St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/yidxqRx8dVC5qiN57",
+     "Number":62,
+     "Street":"Morris St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.03737,40.714454 ]
+     },
+     "properties": {
+     "id":"amenity-75",
+     "Name":"John's Pizzeria",
+     "Category":"Dining",
+     "Address":"87 Sussex St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/cAJLERScrCfvpiLJ7",
+     "Number":87,
+     "Street":"Sussex St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.034947,40.712628 ]
+     },
+     "properties": {
+     "id":"amenity-76",
+     "Name":"Krispy Pizza",
+     "Category":"Dining",
+     "Address":"33 Hudson St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/Q9S3zuuf9KGVRnrF7",
+     "Number":33,
+     "Street":"Hudson St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.034529,40.730911 ]
+     },
+     "properties": {
+     "id":"amenity-77",
+     "Name":"Cosi",
+     "Category":"Dining",
+     "Address":"535 Washington Blvd, Jersey City, NJ 07310, United States",
+     "Google Business URL":"https://goo.gl/maps/ioPmcgN4NL9SdQ2H7",
+     "Number":535,
+     "Street":"Washington Blvd",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7310,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.037541,40.714401 ]
+     },
+     "properties": {
+     "id":"amenity-78",
+     "Name":"Satis Bistro",
+     "Category":"Dining",
+     "Address":"212 Washington St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/satisbistro?share",
+     "Number":212,
+     "Street":"Washington St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.037646,40.713644 ]
+     },
+     "properties": {
+     "id":"amenity-79",
+     "Name":"Bistro La Source",
+     "Category":"Dining",
+     "Address":"85 Morris St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/Bistro-La-Source-173898632667883?share",
+     "Number":85,
+     "Street":"Morris St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.038317,40.714012 ]
+     },
+     "properties": {
+     "id":"amenity-80",
+     "Name":"Light Horse Tavern",
+     "Category":"Dining",
+     "Address":"199 Washington St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/Jhr1p3ghKfEQxTM39",
+     "Number":199,
+     "Street":"Washington St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.039003,40.714257 ]
+     },
+     "properties": {
+     "id":"amenity-81",
+     "Name":"Sam A.M.",
+     "Category":"Dining",
+     "Address":"112 Morris St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/mvs6YQYMYq5xbMSs8",
+     "Number":112,
+     "Street":"Morris St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.039803,40.714219 ]
+     },
+     "properties": {
+     "id":"amenity-82",
+     "Name":"Tino's Artisinal Pizza Co",
+     "Category":"Dining",
+     "Address":"199 Warren St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/tino-s-artisan-pizza-co-?share",
+     "Number":199,
+     "Street":"Warren St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.040035,40.713727 ]
+     },
+     "properties": {
+     "id":"amenity-83",
+     "Name":"Amelia's Bistro",
+     "Category":"Dining",
+     "Address":"187 Warren St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/ameliasbistrojc?share",
+     "Number":187,
+     "Street":"Warren St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.039985,40.713178 ]
+     },
+     "properties": {
+     "id":"amenity-84",
+     "Name":"White Star",
+     "Category":"Dining",
+     "Address":"179 Warren St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/uY2GsBxe7c716atD6",
+     "Number":179,
+     "Street":"Warren St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.040284,40.713901 ]
+     },
+     "properties": {
+     "id":"amenity-85",
+     "Name":"Taqueria Viva Mexico Kitchen Café",
+     "Category":"Dining",
+     "Address":"133 Morris St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/qw1CwLZtF1rD8mTe7",
+     "Number":133,
+     "Street":"Morris St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.039008,40.71662 ]
+     },
+     "properties": {
+     "id":"amenity-86",
+     "Name":"Lisbon Pizzeria Las Americas",
+     "Category":"Dining",
+     "Address":"260 Warren St #3713, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/QGz9dAVDbTxieKrt6",
+     "Number":260,
+     "Street":"Warren St",
+     "Unit Type":"#",
+     "Unit Number":3713,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.037759,40.716586 ]
+     },
+     "properties": {
+     "id":"amenity-87",
+     "Name":"Taste of North China",
+     "Category":"Dining",
+     "Address":"75 Montgomery St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/9oVfv1oeq8GQVYgK8",
+     "Number":75,
+     "Street":"Montgomery St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.037773,40.716371 ]
+     },
+     "properties": {
+     "id":"amenity-88",
+     "Name":"Mantra Authentic Indian",
+     "Category":"Dining",
+     "Address":"253 Washington St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/mantrajc?share",
+     "Number":253,
+     "Street":"Washington St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.037792,40.716172 ]
+     },
+     "properties": {
+     "id":"amenity-89",
+     "Name":"Buddy Who's",
+     "Category":"Dining",
+     "Address":"247 Washington St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/X9w3fdsXGQz4E5br8",
+     "Number":247,
+     "Street":"Washington St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043792,40.718535 ]
+     },
+     "properties": {
+     "id":"amenity-90",
+     "Name":"Lackawanna Coffee",
+     "Category":"Dining",
+     "Address":"295 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/sKmPxR3YHkVSeFd88",
+     "Number":295,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.039998,40.721604 ]
+     },
+     "properties": {
+     "id":"amenity-91",
+     "Name":"O'Hara's Downtown",
+     "Category":"Dining",
+     "Address":"172 1st St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/oharasjc?share",
+     "Number":172,
+     "Street":"1st St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.04082,40.721272 ]
+     },
+     "properties": {
+     "id":"amenity-92",
+     "Name":"Hudson Hall",
+     "Category":"Dining",
+     "Address":"364 Marin Blvd, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/hudsonhalljc?share",
+     "Number":364,
+     "Street":"Marin Blvd",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.039921,40.721022 ]
+     },
+     "properties": {
+     "id":"amenity-93",
+     "Name":"Departed Soles",
+     "Category":"Dining",
+     "Address":"150 Bay St #2a, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/PwQjDkqcZ1giLjcv6",
+     "Number":150,
+     "Street":"Bay St",
+     "Unit Type":"Ph",
+     "Unit Number":2,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.039921,40.721022 ]
+     },
+     "properties": {
+     "id":"amenity-94",
+     "Name":"Bucket & Bay Craft Gelato Co",
+     "Category":"Dining",
+     "Address":"150 Bay St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/YkxzGnHT1RVAbLxx5",
+     "Number":150,
+     "Street":"Bay St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.042464,40.721388 ]
+     },
+     "properties": {
+     "id":"amenity-95",
+     "Name":"dullboy",
+     "Category":"Dining",
+     "Address":"364 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/hQkSREAzQMxChmCs9",
+     "Number":364,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044547,40.716212 ]
+     },
+     "properties": {
+     "id":"amenity-96",
+     "Name":"Taqueria Downtown",
+     "Category":"Dining",
+     "Address":"236 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/dyV4gYhz1gqXAWu56",
+     "Number":236,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.042984,40.720852 ]
+     },
+     "properties": {
+     "id":"amenity-97",
+     "Name":"Mathews Food and Drink",
+     "Category":"Dining",
+     "Address":"351 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/mathewsfoodanddrink?share",
+     "Number":351,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043125,40.720536 ]
+     },
+     "properties": {
+     "id":"amenity-98",
+     "Name":"Orale Mexican Kitchen",
+     "Category":"Dining",
+     "Address":"341 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/OraleMK-JC?share",
+     "Number":341,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043769,40.720069 ]
+     },
+     "properties": {
+     "id":"amenity-99",
+     "Name":"Porta",
+     "Category":"Dining",
+     "Address":"135 Newark Ave, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/PortaJerseyCity?share",
+     "Number":135,
+     "Street":"Newark Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043383,40.718278 ]
+     },
+     "properties": {
+     "id":"amenity-100",
+     "Name":"Beechwood Café",
+     "Category":"Dining",
+     "Address":"290 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/531UDQ8PUYk4JzbH7",
+     "Number":290,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044254,40.717896 ]
+     },
+     "properties": {
+     "id":"amenity-101",
+     "Name":"Luna",
+     "Category":"Dining",
+     "Address":"279 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/lunajerseycity?share",
+     "Number":279,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044376,40.717776 ]
+     },
+     "properties": {
+     "id":"amenity-102",
+     "Name":"Razza",
+     "Category":"Dining",
+     "Address":"275 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/LbVdsCfaEaNu5W7b6",
+     "Number":275,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.042985,40.717096 ]
+     },
+     "properties": {
+     "id":"amenity-103",
+     "Name":"Short Grain",
+     "Category":"Dining",
+     "Address":"183 Montgomery St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/doBuuGuQZhEKjEKV9",
+     "Number":183,
+     "Street":"Montgomery St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043828,40.714781 ]
+     },
+     "properties": {
+     "id":"amenity-104",
+     "Name":"Edward's Steakhouse",
+     "Category":"Dining",
+     "Address":"239 Marin Blvd, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/qAnQGAZat9Gh5r1t8",
+     "Number":201,
+     "Street":"Marin Blvd",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044625,40.72893 ]
+     },
+     "properties": {
+     "id":"amenity-105",
+     "Name":"The Hamilton Inn",
+     "Category":"Dining",
+     "Address":"708 Jersey Ave, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/afmGfYwP9WGD2bzp6",
+     "Number":708,
+     "Street":"Jersey Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.046289,40.727607 ]
+     },
+     "properties": {
+     "id":"amenity-106",
+     "Name":"Rumba Cubana",
+     "Category":"Dining",
+     "Address":"235 Pavonia Ave, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/rumba-cubana-jersey-city?share",
+     "Number":235,
+     "Street":"Pavonia Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043796,40.725931 ]
+     },
+     "properties": {
+     "id":"amenity-107",
+     "Name":"Ahri's Kitchen",
+     "Category":"Dining",
+     "Address":"227 7th St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/qPiqauLUqEtEt2rH6",
+     "Number":227,
+     "Street":"7th St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044258,40.728817 ]
+     },
+     "properties": {
+     "id":"amenity-108",
+     "Name":"Hamilton Pork",
+     "Category":"Dining",
+     "Address":"247 10th St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/9NFMyqDBUCpkwPEx7",
+     "Number":247,
+     "Street":"10th St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.046525,40.72856 ]
+     },
+     "properties": {
+     "id":"amenity-109",
+     "Name":"Ed & Mary's",
+     "Category":"Dining",
+     "Address":"174 Coles St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/ednmarys?share",
+     "Number":174,
+     "Street":"Coles St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.045768,40.724933 ]
+     },
+     "properties": {
+     "id":"amenity-110",
+     "Name":"Rustique Pizza",
+     "Category":"Dining",
+     "Address":"611 Jersey Ave, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/RustiquePizza?share",
+     "Number":611,
+     "Street":"Jersey Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.049912,40.727939 ]
+     },
+     "properties": {
+     "id":"amenity-111",
+     "Name":"White Star Bar",
+     "Category":"Dining",
+     "Address":"230 Brunswick St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/gBZybJNJAzejexm86",
+     "Number":230,
+     "Street":"Brunswick St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043459,40.72923 ]
+     },
+     "properties": {
+     "id":"amenity-112",
+     "Name":"New Thanh Hoai",
+     "Category":"Dining",
+     "Address":"234 10th St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/zsRktsgYF882p23A8",
+     "Number":234,
+     "Street":"10th St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.050181,40.726457 ]
+     },
+     "properties": {
+     "id":"amenity-113",
+     "Name":"Delenio",
+     "Category":"Dining",
+     "Address":"357 7th St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/KCsfRmHXaTLrYo6j8",
+     "Number":357,
+     "Street":"7th St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.039985,40.713178 ]
+     },
+     "properties": {
+     "id":"amenity-114",
+     "Name":"White Star Warren Street",
+     "Category":"Dining",
+     "Address":"179 Warren St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/uY2GsBxe7c716atD6",
+     "Number":179,
+     "Street":"Warren St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.03394,40.713026 ]
+     },
+     "properties": {
+     "id":"amenity-115",
+     "Name":"Bluestone Lane",
+     "Category":"Dining",
+     "Address":"30 Hudson St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/LqsNSLCHKM6fKnaL6",
+     "Number":30,
+     "Street":"Hudson St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044041,40.727489 ]
+     },
+     "properties": {
+     "id":"amenity-116",
+     "Name":"Milk Sugar Love",
+     "Category":"Dining",
+     "Address":"19 McWilliams Pl, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/7Ywoo5r4biMR1sEH6",
+     "Number":19,
+     "Street":"Mcwilliams Pl",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.040658,40.726157 ]
+     },
+     "properties": {
+     "id":"amenity-117",
+     "Name":"Cafe Esme",
+     "Category":"Dining",
+     "Address":"485 Marin Blvd, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/cafeesme?share",
+     "Number":465,
+     "Street":"Marin Blvd",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.063989,40.738969 ]
+     },
+     "properties": {
+     "id":"amenity-118",
+     "Name":"Zeppelin Hall Beer Garden",
+     "Category":"Dining",
+     "Address":"88 Liberty View Dr., Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/v7TTeL7JfqibaALt9",
+     "Number":88,
+     "Street":"Liberty Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7306,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.04348,40.712048 ]
+     },
+     "properties": {
+     "id":"amenity-119",
+     "Name":"Surf City",
+     "Category":"Dining",
+     "Address":"1 Marin Blvd, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/gHc1SuW3gKDjtouk8",
+     "Number":1,
+     "Street":"Marin Blvd",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.035583,40.720326 ]
+     },
+     "properties": {
+     "id":"amenity-120",
+     "Name":"Smorgasborg",
+     "Category":"Dining",
+     "Address":"44 Bay St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/s4zkFvJyB1tv9jet7",
+     "Number":44,
+     "Street":"Bay St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.03119,40.716119 ]
+     },
+     "properties": {
+     "id":"amenity-121",
+     "Name":"Hyatt Regency Jersey City",
+     "Category":"Hotels",
+     "Address":"2 Exchange Pl, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/8v2UrhdhamSaeJ6NA",
+     "Number":2,
+     "Street":"Exchange Pl",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.033868,40.715918 ]
+     },
+     "properties": {
+     "id":"amenity-122",
+     "Name":"Hyatt House",
+     "Category":"Hotels",
+     "Address":"1 Exchange Pl, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/hyatt-house-jersey-city?share",
+     "Number":1,
+     "Street":"Exchange Pl",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036728,40.721609 ]
+     },
+     "properties": {
+     "id":"amenity-123",
+     "Name":"Candlewood Suites",
+     "Category":"Hotels",
+     "Address":"21 2nd St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/MuzdV8dMcyCXj7Ek9",
+     "Number":21,
+     "Street":"2nd St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036613,40.723505 ]
+     },
+     "properties": {
+     "id":"amenity-124",
+     "Name":"Double Tree by Hilton Hotel",
+     "Category":"Hotels",
+     "Address":"455 Washington Blvd, Jersey City, NJ 07310, United States",
+     "Google Business URL":"https://goo.gl/maps/xKrsFwDnAsKsTTVZ9",
+     "Number":455,
+     "Street":"Washington Blvd",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7310,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.033142,40.717099 ]
+     },
+     "properties": {
+     "id":"amenity-125",
+     "Name":"Residence Inn by Marriott Jersey City nopy by Hilton",
+     "Category":"Hotels",
+     "Address":"80 Christopher Columbus Dr, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/hgf76fXpbco9mPQ67",
+     "Number":80,
+     "Street":"Christopher Columbus Dr",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.032724,40.720216 ]
+     },
+     "properties": {
+     "id":"amenity-126",
+     "Name":"Noah's Ark Florist",
+     "Category":"Retail",
+     "Address":"Harborside Financial Center, 200 Hudson St, Jersey City, NJ 07311, United States",
+     "Google Business URL":"https://g.page/noahsarkflorist?share",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7311,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.035254,40.714559 ]
+     },
+     "properties": {
+     "id":"amenity-127",
+     "Name":"Hudson Greene Market",
+     "Category":"Retail",
+     "Address":"77 Hudson St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/hudsongreene?share",
+     "Number":77,
+     "Street":"Hudson St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036427,40.721856 ]
+     },
+     "properties": {
+     "id":"amenity-128",
+     "Name":"Hudson Vine",
+     "Category":"Retail",
+     "Address":"1 2nd St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/NDDCipxYCL9qEN3R7",
+     "Number":1,
+     "Street":"2nd St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036877,40.721365 ]
+     },
+     "properties": {
+     "id":"amenity-129",
+     "Name":"V's Barbershop Jersey City",
+     "Category":"Retail",
+     "Address":"389 Washington St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/WS5QuYqE5en49Pj29",
+     "Number":389,
+     "Street":"Washington St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036877,40.721365 ]
+     },
+     "properties": {
+     "id":"amenity-130",
+     "Name":"European Wax Center",
+     "Category":"Retail",
+     "Address":"389 Washington St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/EWC-Jersey-City?share",
+     "Number":389,
+     "Street":"Washington St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036877,40.721365 ]
+     },
+     "properties": {
+     "id":"amenity-131",
+     "Name":"Massage Envy",
+     "Category":"Retail",
+     "Address":"389 Washington St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/81xJoASobMko9EoX9",
+     "Number":389,
+     "Street":"Washington St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.037987,40.716487 ]
+     },
+     "properties": {
+     "id":"amenity-132",
+     "Name":"Waterfront Wine & Liquor",
+     "Category":"Retail",
+     "Address":"81 Montgomery St B, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/XPnRsDNX2NBGw5pJ7",
+     "Number":81,
+     "Street":"Montgomery St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.03872,40.722596 ]
+     },
+     "properties": {
+     "id":"amenity-133",
+     "Name":"Packer Shoes",
+     "Category":"Retail",
+     "Address":"382 Marin Blvd, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/7grJQpiaEGFjFDmH9",
+     "Number":396,
+     "Street":"Marin Blvd",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044522,40.720632 ]
+     },
+     "properties": {
+     "id":"amenity-134",
+     "Name":"WORD Bookstore",
+     "Category":"Retail",
+     "Address":"123 Newark Ave, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/wordjerseycity?share",
+     "Number":123,
+     "Street":"Newark Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044355,40.717752 ]
+     },
+     "properties": {
+     "id":"amenity-135",
+     "Name":"Hound About Town",
+     "Category":"Retail",
+     "Address":"218 Montgomery St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/PunNa6DGLAT4bssY6",
+     "Number":218,
+     "Street":"Montgomery St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043937,40.717571 ]
+     },
+     "properties": {
+     "id":"amenity-136",
+     "Name":"CoolVines on Grove",
+     "Category":"Retail",
+     "Address":"276 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/1beA2146n7LsD6Ck6",
+     "Number":276,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043297,40.717302 ]
+     },
+     "properties": {
+     "id":"amenity-137",
+     "Name":"Kanibal & Co",
+     "Category":"Retail",
+     "Address":"197 Montgomery St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/vLSHDb4QxvN7GVgP7",
+     "Number":197,
+     "Street":"Montgomery St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043367,40.71731 ]
+     },
+     "properties": {
+     "id":"amenity-138",
+     "Name":"Hazel Baby & Kids",
+     "Category":"Retail",
+     "Address":"199 Montgomery St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/zbQcwFiwoJw9Lufj8",
+     "Number":199,
+     "Street":"Montgomery St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.035825,40.719968 ]
+     },
+     "properties": {
+     "id":"amenity-139",
+     "Name":"CVS Pharmacy",
+     "Category":"Retail",
+     "Address":"88 Morgan St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/qPtgJFh5vVw5oz6H8",
+     "Number":88,
+     "Street":"Morgan St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043226,40.717293 ]
+     },
+     "properties": {
+     "id":"amenity-140",
+     "Name":"Another Man's Treasure Vintage Store",
+     "Category":"Retail",
+     "Address":"195 Montgomery St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/amtvintage?share",
+     "Number":195,
+     "Street":"Montgomery St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043367,40.71731 ]
+     },
+     "properties": {
+     "id":"amenity-141",
+     "Name":"Hazel Baby & Kids",
+     "Category":"Retail",
+     "Address":"199 Montgomery St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/zbQcwFiwoJw9Lufj8",
+     "Number":199,
+     "Street":"Montgomery St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.046222,40.727902 ]
+     },
+     "properties": {
+     "id":"amenity-142",
+     "Name":"Madame Claude Wine",
+     "Category":"Retail",
+     "Address":"234 Pavonia Ave, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/dHTFE5aVUGqtC1De6",
+     "Number":234,
+     "Street":"Pavonia Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.046221,40.720934 ]
+     },
+     "properties": {
+     "id":"amenity-143",
+     "Name":"Van Hook Cheese & Grocery",
+     "Category":"Retail",
+     "Address":"528 Jersey Ave, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/fVqxLG8Ao6oxMLKd9",
+     "Number":528,
+     "Street":"Jersey Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.037887,40.726888 ]
+     },
+     "properties": {
+     "id":"amenity-144",
+     "Name":"Newport Mall",
+     "Category":"Retail",
+     "Address":"30 Mall Dr W, Jersey City, NJ 07310, United States",
+     "Google Business URL":"https://g.page/ShopNewportCentre?share",
+     "Number":30,
+     "Street":"Mall Dr W",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7310,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044355,40.717752 ]
+     },
+     "properties": {
+     "id":"amenity-145",
+     "Name":"Hound About Town",
+     "Category":"Retail",
+     "Address":"218 Montgomery St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/PunNa6DGLAT4bssY6",
+     "Number":218,
+     "Street":"Montgomery St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -73.977412,40.75236 ]
+     },
+     "properties": {
+     "id":"amenity-146",
+     "Name":"Tia's Place",
+     "Category":"Retail",
+     "Address":"89 E 42nd St, New York, NY 10017, United States",
+     "Google Business URL":"89 E 42nd St, New York, NY 10017, United States",
+     "Number":89,
+     "Street":"E 42nd St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"New York",
+     "State":"NY",
+     "County":"New York County",
+     "Zip":10017,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043226,40.717293 ]
+     },
+     "properties": {
+     "id":"amenity-147",
+     "Name":"Another Man's Treasure Vintage Store",
+     "Category":"Retail",
+     "Address":"195 Montgomery St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/amtvintage?share",
+     "Number":195,
+     "Street":"Montgomery St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044522,40.720632 ]
+     },
+     "properties": {
+     "id":"amenity-148",
+     "Name":"WORD",
+     "Category":"Retail",
+     "Address":"123 Newark Ave, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/wordjerseycity?share",
+     "Number":123,
+     "Street":"Newark Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043937,40.717571 ]
+     },
+     "properties": {
+     "id":"amenity-149",
+     "Name":"CoolVines Jersey City",
+     "Category":"Retail",
+     "Address":"276 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/1beA2146n7LsD6Ck6",
+     "Number":276,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.03872,40.722596 ]
+     },
+     "properties": {
+     "id":"amenity-150",
+     "Name":"Packer Shoes",
+     "Category":"Retail",
+     "Address":"382 Marin Blvd, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/7grJQpiaEGFjFDmH9",
+     "Number":396,
+     "Street":"Marin Blvd",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.035763,40.732816 ]
+     },
+     "properties": {
+     "id":"amenity-151",
+     "Name":"Target",
+     "Category":"Retail",
+     "Address":"100 14th St, Jersey City, NJ 07310, United States",
+     "Google Business URL":"https://goo.gl/maps/S8dX9j6gs2WbAxUq7",
+     "Number":100,
+     "Street":"14th St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7310,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044603,40.732454 ]
+     },
+     "properties": {
+     "id":"amenity-152",
+     "Name":"14th Street Garden Center",
+     "Category":"Retail",
+     "Address":"793 Jersey Ave, Jersey City, NJ 07310, United States",
+     "Google Business URL":"https://goo.gl/maps/Nb8NG3DqvFnnNEAB8",
+     "Number":793,
+     "Street":"Jersey Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7310,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.04311,40.719561 ]
+     },
+     "properties": {
+     "id":"amenity-153",
+     "Name":"Downtown Jersey City Farmers' Market",
+     "Category":"Retail",
+     "Address":"Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/ZzLb7x2XAYyL1p8j7",
+     "Number":null,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.047895,40.722698 ]
+     },
+     "properties": {
+     "id":"amenity-154",
+     "Name":"Metropolis Music",
+     "Category":"Retail",
+     "Address":"240 Newark Ave, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/V5NYZyEikyDxe8s56",
+     "Number":240,
+     "Street":"Newark Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.029569,40.738647 ]
+     },
+     "properties": {
+     "id":"amenity-155",
+     "Name":"Exchange Place Physical Therapy Group",
+     "Category":"Services",
+     "Address":"200 Hudson St #127, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/eptg_pt?share",
+     "Number":200,
+     "Street":"Hudson St",
+     "Unit Type":"#",
+     "Unit Number":127,
+     "City":"Hoboken",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7030,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.035285,40.714746 ]
+     },
+     "properties": {
+     "id":"amenity-156",
+     "Name":"Jersey City Floris Spa and Nail",
+     "Category":"Services",
+     "Address":"70 Greene St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/M23BNcfkW4YDU8vD8",
+     "Number":70,
+     "Street":"Greene St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036427,40.721856 ]
+     },
+     "properties": {
+     "id":"amenity-157",
+     "Name":"Portofino Nails",
+     "Category":"Services",
+     "Address":"1 2nd St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/dwcxDUnkPsmG9gxf7",
+     "Number":1,
+     "Street":"2nd St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.06547,40.729999 ]
+     },
+     "properties": {
+     "id":"amenity-158",
+     "Name":"U.S. Post Office",
+     "Category":"Services",
+     "Address":"899 Bergen Ave, Jersey City, NJ 07306, United States",
+     "Google Business URL":"https://goo.gl/maps/Kw2AdLCArWidFUPs9",
+     "Number":899,
+     "Street":"Bergen Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7306,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.044102,40.726963 ]
+     },
+     "properties": {
+     "id":"amenity-159",
+     "Name":"Salon 10N",
+     "Category":"Services",
+     "Address":"5, McWilliams Pl, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/wh1N71jDeYBpfCLo9",
+     "Number":5,
+     "Street":"McWilliams Pl",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.04239,40.716415 ]
+     },
+     "properties": {
+     "id":"amenity-160",
+     "Name":"Blue Salon & Spa",
+     "Category":"Services",
+     "Address":"280 Marin Blvd, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/SpaBlueJC?share",
+     "Number":248,
+     "Street":"Marin Blvd",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036877,40.721365 ]
+     },
+     "properties": {
+     "id":"amenity-161",
+     "Name":"V's Barbershop",
+     "Category":"Services",
+     "Address":"389 Washington St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/WS5QuYqE5en49Pj29",
+     "Number":389,
+     "Street":"Washington St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036877,40.721365 ]
+     },
+     "properties": {
+     "id":"amenity-162",
+     "Name":"Massage Envy",
+     "Category":"Services",
+     "Address":"389 Washington St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/81xJoASobMko9EoX9",
+     "Number":389,
+     "Street":"Washington St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.036877,40.721365 ]
+     },
+     "properties": {
+     "id":"amenity-163",
+     "Name":"European Wax Center",
+     "Category":"Services",
+     "Address":"389 Washington St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://g.page/EWC-Jersey-City?share",
+     "Number":389,
+     "Street":"Washington St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.043115,40.717738 ]
+     },
+     "properties": {
+     "id":"amenity-164",
+     "Name":"City Hall",
+     "Category":"Services",
+     "Address":"280 Grove St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/c45sg6D2Rn2pFy3V9",
+     "Number":280,
+     "Street":"Grove St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.047304,40.726001 ]
+     },
+     "properties": {
+     "id":"amenity-165",
+     "Name":"Paulus Hook Ferry Terminal",
+     "Category":"Transit",
+     "Address":"Paulus Hook, Hudson St, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/SpbUSBpemTgGx7xV6",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.032857,40.716742 ]
+     },
+     "properties": {
+     "id":"amenity-166",
+     "Name":"Exchange Place PATH",
+     "Category":"Transit",
+     "Address":"68 Christopher Columbus Dr, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/beu2xuRdicr48qt88",
+     "Number":68,
+     "Street":"Christopher Columbus Dr",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.047304,40.726001 ]
+     },
+     "properties": {
+     "id":"amenity-167",
+     "Name":"Grove Street PATH",
+     "Category":"Transit",
+     "Address":"Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/RbXw399RdvahBZUy7",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.047304,40.726001 ]
+     },
+     "properties": {
+     "id":"amenity-168",
+     "Name":"Exchange Place Light Rail",
+     "Category":"Transit",
+     "Address":"Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/UfejBnRz8vnJ8oi28",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.037168,40.732728 ]
+     },
+     "properties": {
+     "id":"amenity-169",
+     "Name":"Newport Light Rail Station",
+     "Category":"Transit",
+     "Address":"Jersey City, NJ 07310, United States",
+     "Google Business URL":"https://goo.gl/maps/PVJ8yxrTcyoNMwCE8",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7310,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.035001,40.716073 ]
+     },
+     "properties": {
+     "id":"amenity-170",
+     "Name":"Marin Street Ferry Terminal",
+     "Category":"Transit",
+     "Address":"101 Hudson St, Jersey City, NJ 07302, USA",
+     "Google Business URL":"https://goo.gl/maps/TmyZJf34P5QTU3WY7",
+     "Number":101,
+     "Street":"Hudson St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.047304,40.726001 ]
+     },
+     "properties": {
+     "id":"amenity-171",
+     "Name":"Harsimus Cove Light Rail",
+     "Category":"Transit",
+     "Address":"Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/hHvNCTpF33AhVQK87",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.047304,40.726001 ]
+     },
+     "properties": {
+     "id":"amenity-172",
+     "Name":"Harborside Light Rail",
+     "Category":"Transit",
+     "Address":"Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/PKxz4PzcdB6me43U6",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.047304,40.726001 ]
+     },
+     "properties": {
+     "id":"amenity-173",
+     "Name":"Essex Light Rail",
+     "Category":"Transit",
+     "Address":"Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/4KzhgqKTNJG66vfL9",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.096771,40.68604 ]
+     },
+     "properties": {
+     "id":"amenity-174",
+     "Name":"Holland Tunnel",
+     "Category":"Transit",
+     "Address":"I-78, Jersey City, NJ 07310, USA",
+     "Google Business URL":"https://goo.gl/maps/N44soLWbt3h7Td337",
+     "Number":null,
+     "Street":"I-78",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.037168,40.732728 ]
+     },
+     "properties": {
+     "id":"amenity-175",
+     "Name":"Newport PATH",
+     "Category":"Transit",
+     "Address":"Jersey City, NJ 07310, United States",
+     "Google Business URL":"https://goo.gl/maps/7U4EwWbB8MTM4FLW9",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7310,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.007401,40.713941 ]
+     },
+     "properties": {
+     "id":"amenity-176",
+     "Name":"World Trade Center PATH",
+     "Category":"Transit",
+     "Address":"New York, NY 10007, United States",
+     "Google Business URL":"https://goo.gl/maps/dGhFaLEuTJhe3JUG8",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"New York",
+     "State":"NY",
+     "County":"New York County",
+     "Zip":10007,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.003368,40.710223 ]
+     },
+     "properties": {
+     "id":"amenity-177",
+     "Name":"The Fulton Center",
+     "Category":"Transit",
+     "Address":"New York, NY 10038, United States",
+     "Google Business URL":"https://goo.gl/maps/DRqHqJSLC5CCq67u9",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"New York",
+     "State":"NY",
+     "County":"New York County",
+     "Zip":10038,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.047304,40.726001 ]
+     },
+     "properties": {
+     "id":"amenity-178",
+     "Name":"Marin Boulevard Light Rail",
+     "Category":"Transit",
+     "Address":"Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/7LUFGGXuxDpUiF488",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.011934,40.713105 ]
+     },
+     "properties": {
+     "id":"amenity-179",
+     "Name":"World Financial Center Ferry Terminal",
+     "Category":"Transit",
+     "Address":"Vesey St, New York, NY 10281, United States",
+     "Google Business URL":"https://goo.gl/maps/cxRrKKKi5EgPRCAJ9",
+     "Number":null,
+     "Street":"Vesey St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"New York",
+     "State":"NY",
+     "County":"New York County",
+     "Zip":10007,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.018244,40.68863 ]
+     },
+     "properties": {
+     "id":"amenity-180",
+     "Name":"Staten Island Ferry Terminal",
+     "Category":"Transit",
+     "Address":"New York, NY 10004, United States",
+     "Google Business URL":"https://goo.gl/maps/eDgDTvFZDXCs8uLf7",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"New York",
+     "State":"NY",
+     "County":"New York County",
+     "Zip":10004,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.011817,40.701309 ]
+     },
+     "properties": {
+     "id":"amenity-181",
+     "Name":"Battery Maritime Building",
+     "Category":"Transit",
+     "Address":"10 South St, New York, NY 10005, United States",
+     "Google Business URL":"https://goo.gl/maps/qAiMwu6cKsJWaQat7",
+     "Number":10,
+     "Street":"South St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"New York",
+     "State":"NY",
+     "County":"New York County",
+     "Zip":10004,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.01001,40.732938 ]
+     },
+     "properties": {
+     "id":"amenity-182",
+     "Name":"Christopher Street Pier",
+     "Category":"Transit",
+     "Address":"393 West St, New York, NY 10014, United States",
+     "Google Business URL":"https://goo.gl/maps/rBLErnaSGGRjLGs98",
+     "Number":393,
+     "Street":"West St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"New York",
+     "State":"NY",
+     "County":"New York County",
+     "Zip":10014,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.003226,40.760345 ]
+     },
+     "properties": {
+     "id":"amenity-183",
+     "Name":"NY Waterway Ferry Terminal",
+     "Category":"Transit",
+     "Address":"459 12th Ave, New York, NY 10001, United States",
+     "Google Business URL":"https://goo.gl/maps/dZ5KNARQoMtUsGiT6",
+     "Number":451,
+     "Street":"12th Ave",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"New York",
+     "State":"NY",
+     "County":"New York County",
+     "Zip":10018,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.020791,40.767828 ]
+     },
+     "properties": {
+     "id":"amenity-184",
+     "Name":"Port Imperial Ferry Terminal",
+     "Category":"Transit",
+     "Address":"Weehawken, NJ 07086, United States",
+     "Google Business URL":"https://goo.gl/maps/ejWfiaT5minHrxMMA",
+     "Number":null,
+     "Street":"",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Weehawken",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7086,
+     "Country":"US"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -74.034904,40.712803 ]
+     },
+     "properties": {
+     "id":"amenity-185",
+     "Name":"Harborside Ferry",
+     "Category":"Transit",
+     "Address":"Hudson River Waterfront Walkway, Jersey City, NJ 07302, United States",
+     "Google Business URL":"https://goo.gl/maps/Ckc6NP6j4bxnsmJd9",
+     "Number":null,
+     "Street":"Hudson St",
+     "Unit Type":"",
+     "Unit Number":null,
+     "City":"Jersey City",
+     "State":"NJ",
+     "County":"Hudson County",
+     "Zip":7302,
+     "Country":"US"
+     }
+   }
+ ]
+ }

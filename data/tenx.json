@@ -1,0 +1,17 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [40.71669039505952, -74.03331426860343]
+        },
+        "properties": {
+            "Name": "10 Exchange Place",
+            "Category": "Primary",
+            "Address": "10 Exchange Pl, Jersey City, NJ 07302",
+            "Google Business URL": "",
+            "Latitude": 40.7166772
+        }
+    }]
+}

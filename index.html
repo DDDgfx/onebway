@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stack test</title>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
+    <!-- <script defer src="https://cdn.jsdelivr.net/gh//DDDgfx/tenx@295a63cf1821fe2260f7aaf8e799ed0446f24e11/index.js"></script> -->
+    <script>
+        //API KEYS
+    </script>
+    <style type="text/css">
+        #stack-svg {
+            max-height: 100%;
+        }
+
+        .floor,
+        .suite {
+            fill: #00d8e2;
+        }
+
+        .floor {
+            fill-opacity: 0.5;
+        }
+
+        .diagram-label {
+            font-size: 16px;
+            font-family: 'Alliance no', sans-serif;
+            font-weight: 300;
+            pointer-events: none;
+        }
+
+
+        .suite {
+            fill-opacity: 0.75;
+        }
+
+        .detail-lines,
+        .building-outline,
+        .building-outline-lite {
+            fill: none;
+            stroke: #000;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            pointer-events: none;
+        }
+
+        .detail-lines {
+            stroke-opacity: 0.5;
+            stroke-width: 0.25px;
+        }
+
+        .building-outline {
+            stroke-width: 2px;
+        }
+
+        .building-outline-lite {
+            stroke-width: 1px;
+        }
+
+        /* Marker tweaks */
+        .mapboxgl-popup-close-button {
+            display: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            pointer-events: auto;
+            -webkit-text-size-adjust: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            border: 0;
+            border-radius: 0 3px 0 0;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        .mapboxgl-popup-content {
+            /* font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif; */
+            padding: 15px 15px 15px 15px;
+            /* width: 180px; */
+            -webkit-text-size-adjust: 100%;
+            font-family: 'Alliance no', sans-serif;
+            color: #141414;
+            text-align: left;
+            box-sizing: border-box;
+            border-radius: 4px;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+            letter-spacing: 0em;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, .25);
+
+        }
+
+
+        .mapboxgl-popup-content h3 {
+            font-family: 'Alliance no', sans-serif;
+            color: #000;
+            margin: 0;
+            display: block;
+            font-size: 12px;
+            line-height: 18px;
+            font-weight: 400;
+        }
+
+        .mapboxgl-popup-content h4 {
+            font-family: 'Alliance no', sans-serif;
+            margin: 0;
+            margin-bottom: 5px;
+            color: #000;
+            opacity: .4;
+            display: block;
+            font-size: 12px;
+            line-height: 18px;
+            font-weight: 400;
+        }
+
+        .mapboxgl-popup-content a {
+            color: #000;
+            text-decoration: underline;
+            cursor: pointer;
+
+        }
+
+
+        .mapboxgl-popup-tip {
+            box-shadow: 4px 4px 4px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="center-lane" class="center-container">
+        <div class="kicker">Stack Test!</div>
+
+        <div id="table-diagram" class="flex-container">
+            <div id="availability-table-container">
+                <div class="w-layout-grid availability-table-row atr-header">
+                    <div class="header-label">Floor</div>
+                    <div class="header-label">Suite</div>
+                    <div class="header-label">RSF</div>
+                    <div class="header-label">Available</div>
+                </div>
+                <div class="w-dyn-list">
+                    <div id="availability-table" role="list" class="w-dyn-items">
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/8"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>8</div>
+                                    <div>800</div>
+                                    <div>7,557</div>
+                                    <div>Now</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/8-9"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>8</div>
+                                    <div>810A</div>
+                                    <div>4,164</div>
+                                    <div>Now</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/8-10"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>8</div>
+                                    <div>830</div>
+                                    <div>3,701</div>
+                                    <div>Now</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%; height: 1px;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/10"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>10</div>
+                                    <div>1010</div>
+                                    <div>3,604</div>
+                                    <div>Now</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/10-11"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>10</div>
+                                    <div>1090</div>
+                                    <div>10,911</div>
+                                    <div>1/1/22</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/11"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>11</div>
+                                    <div>1100</div>
+                                    <div>39,359</div>
+                                    <div>8/1/22</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/12"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>12</div>
+                                    <div>1200</div>
+                                    <div>39,339</div>
+                                    <div>4/30/22</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/14"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>14</div>
+                                    <div>1420</div>
+                                    <div>3,378</div>
+                                    <div>Now</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/17"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>17</div>
+                                    <div>1710</div>
+                                    <div>24,437</div>
+                                    <div>3/1/22</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/17-18"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>17</div>
+                                    <div>1740</div>
+                                    <div>9,544</div>
+                                    <div>8/1/22</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/18"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>18</div>
+                                    <div>1820</div>
+                                    <div>18,735</div>
+                                    <div>Now</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/gr"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>GR</div>
+                                    <div>GR00</div>
+                                    <div>4,000</div>
+                                    <div>Now</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/gr-2"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>GR</div>
+                                    <div>GR10</div>
+                                    <div>1,249</div>
+                                    <div>Now</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div data-w-id="d04fd053-44b9-faf7-43d0-5efe6208de4c" style="opacity: 1;" role="listitem"
+                            class="availability-item w-dyn-item"><a href="/availability/gr-3"
+                                class="availability-row w-inline-block">
+                                <div class="w-layout-grid availability-table-row">
+                                    <div>GR</div>
+                                    <div>GR60</div>
+                                    <div>931</div>
+                                    <div>Now</div>
+                                    <div id="w-node-_48563f7b-f16c-4464-9966-56ae035c91f4-fafc9028" class="text-link">
+                                        <div>Floor Plan →</div>
+                                        <div class="tl-underline" style="width: 100%; height: 1px;"></div>
+                                    </div>
+                                </div>
+                            </a></div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div id="building-diagram" class="flex-item">
+            </div>
+        </div>
+
+        <div id="category-map" class="flex-container">
+            <div id="w-node-d513969f-0950-4a74-9059-15cb5a8ad7b1-8752bb76" class="toggle-wrapper">
+                <div data-hover="" data-delay="250" class="amenity-container w-dropdown" style="">
+                    <div class="amenity-header w-dropdown-toggle" id="w-dropdown-toggle-0"
+                        aria-controls="w-dropdown-list-0" aria-haspopup="menu" aria-expanded="false" role="button"
+                        tabindex="0">
+                        <div class="amenity-icon w-icon-dropdown-toggle" aria-hidden="true"></div>
+                        <div>Attractions</div>
+                    </div>
+                    <div class="amenity-header w-dropdown-toggle" id="w-dropdown-toggle-2"
+                        aria-controls="w-dropdown-list-2" aria-haspopup="menu" aria-expanded="false" role="button"
+                        tabindex="0">
+                        <div class="amenity-icon w-icon-dropdown-toggle" aria-hidden="true"></div><img
+                            src="https://assets.website-files.com/6090429b435c08002af32d64/60dc223daff5a72643bc09d2_Bullet.svg"
+                            loading="lazy" alt="" class="bullet mr-bullet">
+                        <div>Food and Drink</div>
+                    </div>
+                    <!-- <nav class="amenity-pane w-dropdown-list" style="width: 586.625px; height: 0px;"
+                        id="w-dropdown-list-0" aria-labelledby="w-dropdown-toggle-0">
+                        <div class="amenity-content">
+                            <div class="w-dyn-list">
+                                <div role="list" class="w-dyn-items">
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Manhattan Yacht Club</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Jersey City 9-11 Memorial</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Liberty National Golf Course</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Liberty Science Center</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Statue Cruises</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Empty Sky Memorial</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Liberty State Park</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hamilton Park</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Newport Green Park</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Newport Yacht Club and Marina</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>J. Owen Grundy Park</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Morris Canal Park</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Van Vorst Park</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Jersey City Free Public Library</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav> -->
+                </div>
+                <div data-hover="" data-delay="250" class="amenity-container w-dropdown" style="">
+                    <div class="amenity-header w-dropdown-toggle" id="w-dropdown-toggle-1"
+                        aria-controls="w-dropdown-list-1" aria-haspopup="menu" aria-expanded="false" role="button"
+                        tabindex="0">
+                        <div class="amenity-icon w-icon-dropdown-toggle" aria-hidden="true"></div>
+                        <div>Fitness</div>
+                    </div>
+                    <!-- <nav class="amenity-pane w-dropdown-list" style="width: 431px; height: 0px;" id="w-dropdown-list-1"
+                        aria-labelledby="w-dropdown-toggle-1">
+                        <div class="amenity-content">
+                            <div class="w-dyn-list">
+                                <div role="list" class="w-dyn-items">
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>JC Barre</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Power-House Pilates</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>The Little Gym of Jersey City</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>RushCycling</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>My Gym</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Project Pilates</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hamilton Health &amp; Fitness</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>The Body Lab</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Row House</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Own Your Fitness</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Fitness Blueprint</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>WeStrong Strength &amp; Conditioning</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Maximum Motion Fitness</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>At the Beginning Fitness</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Yoga Shunya</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Crossfit Jersey City</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Jivamukti Yoga</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Jane Do</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Surya Yoga Academy</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Base Gym</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Powerflow Yoga</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CKO Kickboxing</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Pilates Haus</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CRAG</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Cyclebar</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>F45 Training</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hamilton Health &amp; Fitness</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>SunMoon Hot Yoga</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Yoga Shunya</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Maximum Motion Fitness</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CrossFit Jersey City</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Jane DO Jersey City Studio</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>JC Barre</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Base</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Club Metro USA</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CKO Kickboxing</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>New York Sports Clubs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav> -->
+                </div>
+                <div data-hover="" data-delay="250" class="amenity-container w-dropdown" style="">
+                    <div class="amenity-header w-dropdown-toggle" id="w-dropdown-toggle-2"
+                        aria-controls="w-dropdown-list-2" aria-haspopup="menu" aria-expanded="false" role="button"
+                        tabindex="0">
+                        <div class="amenity-icon w-icon-dropdown-toggle" aria-hidden="true"></div>
+                        <div>Food and Drink</div>
+                    </div>
+                    <!-- <nav class="amenity-pane w-dropdown-list" style="width: 431px; height: 0px;" id="w-dropdown-list-2"
+                        aria-labelledby="w-dropdown-toggle-2">
+                        <div class="amenity-content">
+                            <div class="w-dyn-list">
+                                <div class="w-dyn-empty">
+                                    <div>No items found.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav> -->
+                </div>
+                <div data-hover="" data-delay="250" class="amenity-container w-dropdown" style="z-index: 901;">
+                    <div class="amenity-header w-dropdown-toggle w--open" id="w-dropdown-toggle-3"
+                        aria-controls="w-dropdown-list-3" aria-haspopup="menu" aria-expanded="true" role="button"
+                        tabindex="0">
+                        <div class="amenity-icon w-icon-dropdown-toggle" aria-hidden="true"></div>
+                        <div>Hotels</div>
+                    </div>
+                    <!-- <nav class="amenity-pane w-dropdown-list w--open" style="width: 431px;" id="w-dropdown-list-3"
+                        aria-labelledby="w-dropdown-toggle-3">
+                        <div class="amenity-content">
+                            <div class="w-dyn-list">
+                                <div role="list" class="w-dyn-items">
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Residence Inn by Marriott Jersey City nopy by Hilton</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Double Tree by Hilton Hotel</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Candlewood Suites</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hyatt House</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hyatt Regency Jersey City</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav> -->
+                </div>
+                <div data-hover="" data-delay="250" class="amenity-container w-dropdown" style="">
+                    <div class="amenity-header w-dropdown-toggle" id="w-dropdown-toggle-4"
+                        aria-controls="w-dropdown-list-4" aria-haspopup="menu" aria-expanded="false" role="button"
+                        tabindex="0">
+                        <div class="amenity-icon w-icon-dropdown-toggle" aria-hidden="true"></div>
+                        <div>Retail</div>
+                    </div>
+                    <!-- <nav class="amenity-pane w-dropdown-list" style="width: 431px; height: 0px;" id="w-dropdown-list-4"
+                        aria-labelledby="w-dropdown-toggle-4">
+                        <div class="amenity-content">
+                            <div class="w-dyn-list">
+                                <div role="list" class="w-dyn-items">
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Metropolis Music</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Downtown Jersey City Farmers' Market</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>14th Street Garden Center</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Target</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Packer Shoes</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CoolVines Jersey City</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>WORD</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Another Man's Treasure Vintage Store</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Tia's Place</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hound About Town</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Newport Mall</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Van Hook Cheese &amp; Grocery</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Madame Claude Wine</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hazel Baby &amp; Kids</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Another Man's Treasure Vintage Store</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CVS Pharmacy</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hazel Baby &amp; Kids</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Kanibal &amp; Co</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CoolVines on Grove</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hound About Town</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>WORD Bookstore</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Packer Shoes</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Waterfront Wine &amp; Liquor</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Massage Envy</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>European Wax Center</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>V's Barbershop Jersey City</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hudson Vine</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hudson Greene Market</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Noah's Ark Florist</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav> -->
+                </div>
+                <div data-hover="" data-delay="250" class="amenity-container w-dropdown" style="">
+                    <div class="amenity-header w-dropdown-toggle" id="w-dropdown-toggle-5"
+                        aria-controls="w-dropdown-list-5" aria-haspopup="menu" aria-expanded="false" role="button"
+                        tabindex="0">
+                        <div class="amenity-icon w-icon-dropdown-toggle" aria-hidden="true"></div>
+                        <div>Services</div>
+                    </div>
+                    <!-- <nav class="amenity-pane w-dropdown-list" style="width: 431px; height: 0px;" id="w-dropdown-list-5"
+                        aria-labelledby="w-dropdown-toggle-5">
+                        <div class="amenity-content">
+                            <div class="w-dyn-list">
+                                <div role="list" class="w-dyn-items">
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>City Hall</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>European Wax Center</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Massage Envy</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>V's Barbershop</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Blue Salon &amp; Spa</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Salon 10N</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>U.S. Post Office</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Portofino Nails</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Jersey City Floris Spa and Nail</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Exchange Place Physical Therapy Group</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav> -->
+                </div>
+                <div data-hover="" data-delay="250" class="amenity-container w-dropdown" style="">
+                    <div class="amenity-header w-dropdown-toggle" id="w-dropdown-toggle-6"
+                        aria-controls="w-dropdown-list-6" aria-haspopup="menu" aria-expanded="false" role="button"
+                        tabindex="0">
+                        <div class="amenity-icon w-icon-dropdown-toggle" aria-hidden="true"></div>
+                        <div>Transit</div>
+                    </div>
+                    <nav class="amenity-pane w-dropdown-list" style="width: 431px; height: 600px;"
+                        id="w-dropdown-list-6" aria-labelledby="w-dropdown-toggle-6">
+                        <div class="amenity-content">
+                            <div class="w-dyn-list">
+                                <div role="list" class="w-dyn-items">
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Harborside Ferry</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Port Imperial Ferry Terminal</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>NY Waterway Ferry Terminal</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Christopher Street Pier</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Battery Maritime Building</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Staten Island Ferry Terminal</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>World Financial Center Ferry Terminal</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Marin Boulevard Light Rail</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>The Fulton Center</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>World Trade Center PATH</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Newport PATH</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Holland Tunnel</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Essex Light Rail</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Harborside Light Rail</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Harsimus Cove Light Rail</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Marin Street Ferry Terminal</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Newport Light Rail Station</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Exchange Place Light Rail</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Grove Street PATH</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Exchange Place PATH</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Paulus Hook Ferry Terminal</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>City Hall</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>European Wax Center</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Massage Envy</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>V's Barbershop</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Blue Salon &amp; Spa</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Salon 10N</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>U.S. Post Office</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Portofino Nails</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Jersey City Floris Spa and Nail</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Exchange Place Physical Therapy Group</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Metropolis Music</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Downtown Jersey City Farmers' Market</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>14th Street Garden Center</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Target</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Packer Shoes</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CoolVines Jersey City</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>WORD</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Another Man's Treasure Vintage Store</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Tia's Place</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hound About Town</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Newport Mall</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Van Hook Cheese &amp; Grocery</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Madame Claude Wine</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hazel Baby &amp; Kids</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Another Man's Treasure Vintage Store</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CVS Pharmacy</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hazel Baby &amp; Kids</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Kanibal &amp; Co</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CoolVines on Grove</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hound About Town</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>WORD Bookstore</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Packer Shoes</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Waterfront Wine &amp; Liquor</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Massage Envy</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>European Wax Center</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>V's Barbershop Jersey City</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hudson Vine</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hudson Greene Market</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Noah's Ark Florist</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Residence Inn by Marriott Jersey City nopy by Hilton</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Double Tree by Hilton Hotel</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Candlewood Suites</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hyatt House</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hyatt Regency Jersey City</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>JC Barre</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Power-House Pilates</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>The Little Gym of Jersey City</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>RushCycling</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>My Gym</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Project Pilates</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hamilton Health &amp; Fitness</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>The Body Lab</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Row House</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Own Your Fitness</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Fitness Blueprint</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>WeStrong Strength &amp; Conditioning</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Maximum Motion Fitness</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>At the Beginning Fitness</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Yoga Shunya</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Crossfit Jersey City</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Jivamukti Yoga</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Jane Do</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Surya Yoga Academy</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Base Gym</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Powerflow Yoga</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CKO Kickboxing</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Pilates Haus</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CRAG</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Cyclebar</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>F45 Training</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hamilton Health &amp; Fitness</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>SunMoon Hot Yoga</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Yoga Shunya</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Maximum Motion Fitness</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CrossFit Jersey City</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Jane DO Jersey City Studio</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>JC Barre</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Base</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Club Metro USA</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>CKO Kickboxing</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>New York Sports Clubs</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Manhattan Yacht Club</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Jersey City 9-11 Memorial</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Liberty National Golf Course</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Liberty Science Center</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Statue Cruises</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Empty Sky Memorial</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Liberty State Park</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Hamilton Park</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Newport Green Park</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Newport Yacht Club and Marina</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>J. Owen Grundy Park</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Morris Canal Park</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Van Vorst Park</div>
+                                        </div>
+                                    </div>
+                                    <div role="listitem" class="amenity-item w-dyn-item">
+                                        <div>
+                                            <div>Jersey City Free Public Library</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div id="map" class="flex-item">
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+/*--BASIC STYLES--*/
+
+body {
+    font-family: Montserrat;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+
+#table-diagram {
+  height: 700px;
+  margin-top: 100px;
+}
+
+
+/*flex basics*/
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  flex-grow: 1; /* default 0 */
+}
+
+.availability-row {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
+  color: #141414;
+  text-decoration: none;
+}
+
+.w-layout-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
+
+
+
+.availability-table-row {
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  display: grid;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+}
+
+
+.floor-plan-detail-list {
+  width: 500px;
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Alliance no', sans-serif;
+  color: #141414;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-top: 0px;
+  margin-bottom: 32px;
+  padding-top: 24px;
+  padding-left: 0px;
+  border-top: 1px solid rgba(42, 42, 49, 0.1);
+  list-style-type: none;
+
+}
+
+
+.underline-list-item {
+
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Alliance no', sans-serif;
+  color: #141414;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
+  cursor: pointer;
+  list-style-type: none;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  -webkit-box-align: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(42, 42, 49, 0.1);
+  opacity: 1;
+}
+
+
+/*UMMMMMMM ACCORDION STUFF */
+
+
+
+.toggle-wrapper {
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Alliance no',sans-serif;
+  color: #141414;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
+  cursor: pointer;
+  box-sizing: border-box;
+  grid-row-start: span 1;
+  grid-row-end: span 1;
+  grid-column-start: span 4;
+  grid-column-end: span 4;
+}
+
+
+.w-dropdown {
+
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Alliance no',sans-serif;
+  color: #141414;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 900;
+  position: relative;
+  display: block;
+  border-style: none none solid;
+  border-width: 1px;
+  border-color: #e3e3e3 #e3e3e3 rgba(42,42,49,.1);
+  transition: border-color .5s;
+}
+
+.w-dropdown-toggle {
+
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Alliance no',sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
+  box-sizing: border-box;
+  vertical-align: top;
+  text-decoration: none;
+  color: #222;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  display: block;
+  padding: 20px 120px 20px 0;
+  cursor: pointer;
+}
+
+.w-icon-dropdown-toggle {
+
+  -webkit-text-size-adjust: 100%;
+  font-size: 15px;
+  color: #222;
+  text-align: left;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-family: webflow-icons!important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto 20px auto auto;
+  width: 1em;
+  height: 1em;
+  margin-right: 0;
+}
+
+#w-dropdown-toggle-2 > img {
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Alliance no',sans-serif;
+  line-height: 25px;
+  font-weight: 400;
+  font-size: 15px;
+  color: #222;
+  text-align: left;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 0;
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  width: 9.33px;
+  height: 9.33px;
+  margin-right: 12px;
+}
+
+#w-dropdown-toggle-2 {
+
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Alliance no',sans-serif;
+  line-height: 25px;
+  font-weight: 400;
+  font-size: 15px;
+  box-sizing: border-box;
+  vertical-align: top;
+  text-decoration: none;
+  color: #222;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  display: flex;
+  padding: 20px 0;
+  -webkit-box-align: center;
+  align-items: center;
+  transition: 250ms;
+  cursor: pointer;
+}
