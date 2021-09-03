@@ -95,11 +95,11 @@ $(document).ready(function () {
         //Create the map
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/cizzle/ckqi5oie60jyd17s4xujbxpch',
+            style: 'mapbox://styles/cizzle/ckt0bxdf7247z18nyfdyg0jxz',
             center: [-74.033216, 40.716560], // starting position [lng, lat]
             zoom: 15, // starting zoom
-            bearing: -48, //bearing
-            pitch: 52,
+            bearing: 0, //bearing
+            pitch: 0,
             //interactive: false
         });
 
@@ -202,7 +202,7 @@ $(document).ready(function () {
             //add a geo JSON source for 10 Exchange place. alone.
             map.addSource('tenExchange', {
                 'type': 'geojson',
-                'data': tenExchangeFeature
+                'data': oneBwayFeature
 
             });
             //add a layer for 10 Exchange
@@ -244,8 +244,8 @@ $(document).ready(function () {
 
 
             //draw the route to the location
-            var tenx_x = tenExchangeFeature.features[0].geometry.coordinates[0];
-            var tenx_y = tenExchangeFeature.features[0].geometry.coordinates[1];
+            var tenx_x = oneBwayFeature.features[0].geometry.coordinates[0];
+            var tenx_y = oneBwayFeature.features[0].geometry.coordinates[1];
             var feature_x = feature.geometry.coordinates[0];
             var feature_y = feature.geometry.coordinates[1];
 
@@ -451,7 +451,7 @@ $(document).ready(function () {
 
 
 //DATA & ICONS
-var tenExchangeFeature = {
+var oneBwayFeature = {
     "type": "FeatureCollection",
     "features": [{
         "type": "Feature",
@@ -460,7 +460,7 @@ var tenExchangeFeature = {
             "coordinates": [-74.03331426860343, 40.71669039505952]
         },
         "properties": {
-            "Name": "10 Exchange Place",
+            "Name": "One Broadway",
             "Category": "Primary",
             "Address": "10 Exchange Pl, Jersey City, NJ 07302",
             "Google Business URL": "",
