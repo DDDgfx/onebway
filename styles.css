@@ -20,8 +20,22 @@ h1, h2, h3 {
   display: flex;
 }
 
+
+
+.flex-container-column {
+  display: flex;
+  flex-direction: column;
+}
+
+
 .flex-item {
   flex-grow: 1; /* default 0 */
+  /* width: 50%; */
+}
+
+.two-col {
+
+  width: 50%;
 }
 
 .availability-row {
