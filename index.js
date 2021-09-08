@@ -4,13 +4,13 @@ $(document).ready(function () {
 
 
     // THE WHOLE MAP INSIDE THIS CONDITIONAL.
-    if (d3.select("map")) {
+    if (d3.select("#map-wrapper")) {
         console.log("map init");
         ////MAPBOX
         mapboxgl.accessToken = 'pk.eyJ1IjoiY2l6emxlIiwiYSI6ImNrcDJ0MjhteTE5cGsyb213bms0dHp6c3QifQ.-dc9k9y6KKnDlE5UszjS9A';
         //Create the map
         var map = new mapboxgl.Map({
-            container: 'map',
+            container: 'map-wrapper',
             style: 'mapbox://styles/cizzle/ckt0bxdf7247z18nyfdyg0jxz',
             center: [-74.01437444860113, 40.704838691991284], // starting position [lng, lat]
             zoom: 14, // starting zoom
