@@ -21,6 +21,23 @@ h1, h2, h3 {
 }
 
 
+#map-ux {
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Neutrafacetext book',sans-serif;
+  color: #595a5c;
+  font-size: 16px;
+  line-height: 22px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+
+
+
+
+
 
 .flex-container-column {
   display: flex;

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <title>Stack test</title>
 
-<!-- COPY HERE -->
+    <!-- COPY HERE -->
     <style type="text/css">
-        #map-wrapper {
+        #map {
             height: 1000px;
         }
 
@@ -91,12 +91,12 @@
     <script>
         //API KEYS
     </script>
- 
-<!-- TO HERE -->
+
+    <!-- TO HERE -->
 </head>
 
 <body>
-    <div id="center-lane" class="center-container"> 
+    <div id="center-lane" class="center-container">
         <div class="kicker">One Broadway</div>
 
         <!-- <div id="table-diagram" class="flex-container">
@@ -316,11 +316,82 @@
 
         <div id="category-map" class="flex-container-column">
             <div id="map-stuff" class="flex-container">
-                <div class="two-col">One Broadway has been home to titans of American history and industry — from George Washington’s Revolutionary War headquarters, to the office of Cyrus Field the creator of the first transatlantic cable, to J.P. Morgan’s steamship empire the International Mercantile Marine Company.</div>
-                <div id='map-legend-wrapper' class="two-col">Somew stuff here</div>
+                <div class="two-col">One Broadway has been home to titans of American history and industry — from George
+                    Washington’s Revolutionary War headquarters, to the office of Cyrus Field the creator of the first
+                    transatlantic cable, to J.P. Morgan’s steamship empire the International Mercantile Marine Company.
+                </div>
+                <div id='map-legend' class="two-col">Some stuff here</div>
             </div>
-            <div id='animated-tabs-wrapper' class="">Icons</div>
-            <div id="map-wrapper" class="flex-item">
+            <div id='map-ux' class="">
+
+            </div>
+            <div id="map-ux" class="animated-tabs-wrapper w-tab-menu" role="tablist"><a data-w-tab="Commute Time"
+                    data-w-id="4de5a622-ef30-210a-9de9-c1d56414e488"
+                    style="width: 219px; background-color: rgb(189, 164, 100); height: 55px;"
+                    class="anim-tab w-inline-block w-tab-link w--current" id="w-tabs-1-data-w-tab-0"
+                    href="#w-tabs-1-data-w-pane-0" role="tab" aria-controls="w-tabs-1-data-w-pane-0"
+                    aria-selected="true">
+                    <div class="animated-wrapper">
+                        <div class="anim-tab-icon-wrapper"><img
+                                src="https://assets-global.website-files.com/612d170dccf1b61e93d92967/61388d7d97e8401d210c7e7c_clock-grey.svg"
+                                loading="lazy" style="opacity: 0;" alt="" class="animated-tab-icon"><img
+                                src="https://assets-global.website-files.com/612d170dccf1b61e93d92967/61388d7d177e83b6f60ac2c6_clock-white.svg"
+                                loading="lazy" style="display: block; opacity: 1;" alt=""
+                                class="animated-tab-icon current"></div>
+                        <div style="opacity: 1;" class="anim-tab-text-wrapper">
+                            <div class="tab-text">COMMUTE TIME</div>
+                        </div>
+                    </div>
+                </a><a data-w-tab="Transportation" data-w-id="4de5a622-ef30-210a-9de9-c1d56414e490"
+                    style="width: 57px; background-color: rgba(189, 164, 100, 0);"
+                    class="anim-tab w-inline-block w-tab-link" tabindex="-1" id="w-tabs-1-data-w-tab-1"
+                    href="#w-tabs-1-data-w-pane-1" role="tab" aria-controls="w-tabs-1-data-w-pane-1"
+                    aria-selected="false">
+                    <div class="animated-wrapper">
+                        <div class="anim-tab-icon-wrapper"><img
+                                src="https://assets-global.website-files.com/612d170dccf1b61e93d92967/61388d7d41db2d3083e9fa7e_tram-grey.svg"
+                                loading="lazy" style="opacity: 1;" alt="" class="animated-tab-icon"><img
+                                src="https://assets-global.website-files.com/612d170dccf1b61e93d92967/61388d7daf11f8444a55ede6_tram-white.svg"
+                                loading="lazy" style="display: none; opacity: 1;" alt=""
+                                class="animated-tab-icon current"></div>
+                        <div style="opacity: 0;" class="anim-tab-text-wrapper">
+                            <div class="tab-text">TRANSPORTATION</div>
+                        </div>
+                    </div>
+                </a><a data-w-tab="Cycle" data-w-id="4de5a622-ef30-210a-9de9-c1d56414e498"
+                    style="width: 57px; background-color: rgba(189, 164, 100, 0);"
+                    class="anim-tab w-inline-block w-tab-link" tabindex="-1" id="w-tabs-1-data-w-tab-2"
+                    href="#w-tabs-1-data-w-pane-2" role="tab" aria-controls="w-tabs-1-data-w-pane-2"
+                    aria-selected="false">
+                    <div class="animated-wrapper">
+                        <div class="anim-tab-icon-wrapper"><img
+                                src="https://assets-global.website-files.com/612d170dccf1b61e93d92967/61388d7df5eab4d22d7f597d_bike-grey.svg"
+                                loading="lazy" style="opacity: 1;" alt="" class="animated-tab-icon"><img
+                                src="https://assets-global.website-files.com/612d170dccf1b61e93d92967/61388d7daf72856a438a6361_bike-white.svg"
+                                loading="lazy" style="display: none; opacity: 1;" alt=""
+                                class="animated-tab-icon current"></div>
+                        <div style="opacity: 0;" class="anim-tab-text-wrapper">
+                            <div class="tab-text">CYCLING</div>
+                        </div>
+                    </div>
+                </a><a data-w-tab="Point of Interest" data-w-id="4de5a622-ef30-210a-9de9-c1d56414e4a0"
+                    style="width: 57px; background-color: rgba(189, 164, 100, 0);"
+                    class="anim-tab w-inline-block w-tab-link" tabindex="-1" id="w-tabs-1-data-w-tab-3"
+                    href="#w-tabs-1-data-w-pane-3" role="tab" aria-controls="w-tabs-1-data-w-pane-3"
+                    aria-selected="false">
+                    <div class="animated-wrapper">
+                        <div class="anim-tab-icon-wrapper"><img
+                                src="https://assets-global.website-files.com/612d170dccf1b61e93d92967/61388d7db33fb30efa97973a_poi.grey.svg"
+                                loading="lazy" style="opacity: 1;" alt="" class="animated-tab-icon"><img
+                                src="https://assets-global.website-files.com/612d170dccf1b61e93d92967/61388d7dca29e9a42bb05ec1_poi.white.svg"
+                                loading="lazy" style="display: none; opacity: 1;" alt=""
+                                class="animated-tab-icon current"></div>
+                        <div style="opacity: 0;" class="anim-tab-text-wrapper">
+                            <div class="tab-text">POINTS OF INTEREST</div>
+                        </div>
+                    </div>
+                </a></div>
+            <div id="map" class="flex-item">
             </div>
 
         </div>
