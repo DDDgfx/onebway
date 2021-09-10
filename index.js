@@ -1,3 +1,7 @@
+var mapLayersAdded = [];
+var mapSourcesAdded = [];
+
+
 $(document).ready(function () {
 
     console.log("ready steady!");
@@ -19,18 +23,13 @@ $(document).ready(function () {
             //interactive: false
         });
 
-        //Keep the list of amenity categories.
-        //var amenityCategories = ['Attractions', 'Fitness', 'Food and Drink', 'Hotels', 'Retail', 'Services', 'Transit'];
-
+        //The list of amenity categories.
         var amenityCategories = Array.from(uniqueValueMap(amenityData.features, 'subcategory').keys());
-
-
+        //to be recorded if you want category specific behavior.
         var currentCategory;
-
         //var iconScale = d3.scaleOrdinal(['attractions', 'fitness', 'food', 'hotels', 'retail', 'services', 'transit']).domain(amenityCategories);
         var iconScale = d3.scaleOrdinal(['1b_dot_sm']).domain(amenityCategories);
-
-
+        //to pan and zoom for each category in the list.
         var catAngles = {
             'Attractions': {
                 padding: 50,
@@ -70,14 +69,212 @@ $(document).ready(function () {
 
         }
 
+        //Map ux
+        var uxDiv = d3.select('#map-ux');
+
+        var uxBtns = uxDiv.selectAll('a').on('click', function(e) {
+
+            console.log(d3.select(this).attr('data-w-tab'));
+            console.log(e);
+        })
+
+        console.log(uxBtns);
+
+
+
+
+
+
         //Map init
         map.on('load', function () {
+            // // Add a GeoJSON source for all amenities
+            // map.addSource('amenityPoints', {
+            //     'type': 'geojson',
+            //     'data': amenityData
+
+            // });
+
+            // mapSourcesAdded.push('amenityPoints');
+
+
+            // map.addLayer({
+            //     'id': 'amenities',
+            //     'type': 'symbol',
+            //     'source': 'amenityPoints',
+            //     'layout': {
+            //         'icon-image': '1b_dot_sm',
+            //         'icon-anchor': 'center',
+            //         'icon-size': 1,
+            //         'icon-allow-overlap': true
+            //     }
+            // });
+
+            // mapLayersAdded.push('amenities');
+
+            // //for each ammenity
+            // amenityData.features.forEach(function (feature) {
+            //     //find the category name
+            //     var category = feature.properties['subcategory'];
+
+            //     if (!mapLayersAdded.includes(category)) {
+            //         mapLayersAdded.push(category)
+            //     };
+            //     //and if it has not been done, add the category as a layer and use the filter to add all the features that match.
+            //     if (!map.getLayer(category)) {
+            //         map.addLayer({
+            //             'id': category,
+            //             'type': 'symbol',
+            //             'source': 'amenityPoints',
+            //             'layout': {
+            //                 'icon-image': iconScale(category),
+            //                 'icon-anchor': 'bottom',
+            //                 'icon-size': 1,
+            //                 'icon-allow-overlap': true
+            //             },
+            //             'filter': ['==', 'subcategory', category]
+            //         });
+            //     }
+            //     //and make it invisible to start.
+            //     map.setLayoutProperty(category, 'visibility', 'none');
+
+
+            // })
+
+            //add a geo JSON source for 10 Exchange place. alone.
+            map.addSource('oneBway', {
+                'type': 'geojson',
+                'data': oneBwayFeature
+
+            });
+            //add a layer for 10 Exchange
+            map.addLayer({
+                'id': 'oneBwayPoint',
+                'type': 'symbol',
+                'source': 'oneBway',
+                'layout': {
+                    'icon-image': '1b_dot',
+                    // 'text-field' : ['get', 'Name'],
+                    'icon-anchor': 'bottom',
+                    'icon-size': 1,
+                    'icon-allow-overlap': true
+                }
+            });
+
+
+            commuteMode(neighborhoodData);
+
+        });
+
+
+        // Update map
+        //Map update
+        function commuteMode(locations) {
+
+            //map.resize();
+            // Add a GeoJSON source for all amenities
+            //map.removeSource('locationPoints');
+            //map.getSource('locationPoints').setData(locations);
+
+            // if (!map.getSource('locationPoints')) {
+            //     console.log("locations is not here");
+            // }
+
+            // console.log(map.getStyle().layers);
+
+            mapLayersAdded.forEach(function (d) {
+                if (map.getLayer(d)) {
+                    map.removeLayer(d);
+                    mapLayersAdded.splice(mapLayersAdded.indexOf(d), 1)
+                    console.log(mapLayersAdded);
+                }
+
+            })
+
+            map.addSource('neighborhoodPoints', {
+                'type': 'geojson',
+                'data': neighborhoodData
+
+            });
+
+            map.addLayer({
+                'id': 'neighborhoods',
+                'type': 'symbol',
+                'source': 'neighborhoodPoints',
+                'layout': {
+                    'icon-image': '1b_dot_sm',
+                    'icon-anchor': 'center',
+                    'icon-size': 1,
+                    'icon-allow-overlap': true
+                }
+            });
+
+            mapLayersAdded.push('neighborhoods');
+
+
+            //draw the route to the location
+            var oneBway_x = oneBwayFeature.features[0].geometry.coordinates[0];
+            var oneBway_y = oneBwayFeature.features[0].geometry.coordinates[1];
+
+            neighborhoodData.features.forEach(function (feature) {
+                var feature_x = feature.geometry.coordinates[0];
+                var feature_y = feature.geometry.coordinates[1];
+
+                //directions example request.
+                var reqUrl = "https://api.mapbox.com/directions/v5/mapbox/walking/" + oneBway_x + '%2C' + oneBway_y + '%3B' + feature_x + '%2C' + feature_y + '?alternatives=false&geometries=geojson&steps=false&access_token=pk.eyJ1IjoiY2l6emxlIiwiYSI6ImNrcDJ0MjhteTE5cGsyb213bms0dHp6c3QifQ.-dc9k9y6KKnDlE5UszjS9A';
+
+
+                d3.json(reqUrl).then(function (d) {
+                    //console.log(d);
+                    addNeighborhoodRoute(d, feature.properties.Name);
+                })
+
+            })
+
+            var bounds = new mapboxgl.LngLatBounds();
+
+            neighborhoodData.features.forEach(function (feature) {
+                bounds.extend(feature.geometry.coordinates)
+            });
+
+
+            map.fitBounds(bounds, {
+                padding: 25,
+                pitch: 0,
+                bearing: 0
+            });
+
+        }
+
+        function amenityMode(locations) {
+
+            //map.resize();
+            // Add a GeoJSON source for all amenities
+            //map.removeSource('locationPoints');
+            //map.getSource('locationPoints').setData(locations);
+
+            // if (!map.getSource('locationPoints')) {
+            //     console.log("locations is not here");
+            // }
+
+            console.log(map.getStyle().layers);
+
+            mapLayersAdded.forEach(function (d) {
+                if (map.getLayer(d)) {
+                    map.removeLayer(d);
+                    mapLayersAdded.splice(mapLayersAdded.indexOf(d), 1)
+                    console.log(mapLayersAdded);
+                }
+
+            })
+
             // Add a GeoJSON source for all amenities
             map.addSource('amenityPoints', {
                 'type': 'geojson',
                 'data': amenityData
 
             });
+
+            mapSourcesAdded.push('amenityPoints');
 
 
             map.addLayer({
@@ -92,12 +289,16 @@ $(document).ready(function () {
                 }
             });
 
-
+            mapLayersAdded.push('amenities');
 
             //for each ammenity
             amenityData.features.forEach(function (feature) {
                 //find the category name
                 var category = feature.properties['subcategory'];
+
+                if (!mapLayersAdded.includes(category)) {
+                    mapLayersAdded.push(category)
+                };
                 //and if it has not been done, add the category as a layer and use the filter to add all the features that match.
                 if (!map.getLayer(category)) {
                     map.addLayer({
@@ -139,7 +340,46 @@ $(document).ready(function () {
                 }
             });
 
-        });
+
+
+            //draw the route to the location
+            var oneBway_x = oneBwayFeature.features[0].geometry.coordinates[0];
+            var oneBway_y = oneBwayFeature.features[0].geometry.coordinates[1];
+
+            neighborhoodData.features.forEach(function (feature) {
+                var feature_x = feature.geometry.coordinates[0];
+                var feature_y = feature.geometry.coordinates[1];
+
+                //directions example request.
+                var reqUrl = "https://api.mapbox.com/directions/v5/mapbox/walking/" + oneBway_x + '%2C' + oneBway_y + '%3B' + feature_x + '%2C' + feature_y + '?alternatives=false&geometries=geojson&steps=false&access_token=pk.eyJ1IjoiY2l6emxlIiwiYSI6ImNrcDJ0MjhteTE5cGsyb213bms0dHp6c3QifQ.-dc9k9y6KKnDlE5UszjS9A';
+
+
+                d3.json(reqUrl).then(function (d) {
+                    //console.log(d);
+                    addNeighborhoodRoute(d, feature.properties.Name);
+                })
+
+            })
+
+            var bounds = new mapboxgl.LngLatBounds();
+
+            neighborhoodData.features.forEach(function (feature) {
+                bounds.extend(feature.geometry.coordinates)
+            });
+
+
+            map.fitBounds(bounds, {
+                padding: 25,
+                pitch: 0,
+                bearing: 0
+            });
+
+        }
+
+
+
+
+
 
         //all the popups
         function createPopUp(feature) {
@@ -173,14 +413,62 @@ $(document).ready(function () {
             //directions example request.
             var reqUrl = "https://api.mapbox.com/directions/v5/mapbox/cycling/" + tenx_x + '%2C' + tenx_y + '%3B' + feature_x + '%2C' + feature_y + '?alternatives=false&geometries=geojson&steps=false&access_token=pk.eyJ1IjoiY2l6emxlIiwiYSI6ImNrcDJ0MjhteTE5cGsyb213bms0dHp6c3QifQ.-dc9k9y6KKnDlE5UszjS9A';
 
-
-            d3.json(reqUrl).then(function (d) {
-                addRoute(d);
-            })
+            //Turn this on to add way finding opaths from amenities.
+            // d3.json(reqUrl).then(function (d) {
+            //     addRoute(d);
+            // })
 
             addMarker(feature);
         }
 
+
+
+        function addNeighborhoodRoute(d, layerName) {
+
+
+            console.log(d);
+
+            var route = d.routes[0].geometry;
+            var duration = d.routes[0].duration;
+            var minutes = Math.floor(duration / 60);
+
+            var hours = Math.floor(minutes / 60);
+            var extraMinutes = (minutes % 60);
+
+            console.log(hours + " hours and " + extraMinutes + " minutes");
+
+
+            if (map.getLayer(layerName)) map.removeLayer(layerName);
+            if (map.getSource(layerName)) map.removeSource(layerName);
+
+            map.addSource(layerName, {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': route
+                }
+            });
+
+            map.addLayer({
+                'id': layerName,
+                'type': 'line',
+                'source': layerName,
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#5C6972',
+                    'line-width': 2,
+                    'line-dasharray': [.1, 2]
+                }
+            });
+
+            mapLayersAdded.push(layerName);
+
+            map.moveLayer(layerName, 'oneBwayPoint');
+        }
 
         function addRoute(d) {
 
@@ -246,12 +534,34 @@ $(document).ready(function () {
             //map.moveLayer('route', 'tenExchangePoint');
         }
 
+        function createLegend(scale) {
+
+            d3.select('#map-legend').remove();
+
+
+            var legend = d3.select("#copy-ux").insert("div", "#controls").attr("id", "map-legend").html('Legend')
+
+
+
+            // console.log(scale.domain());
+
+            var legendItems = legend.selectAll('div').data(scale.domain()).join('div').classed('legend-item-holder', true);
+
+            //legendItems.html(d => d);
+
+            legendItems.append('img').attr('src', d => 'icons/halodot_' + scale(d) + '.svg').classed('legend-item-icon', true);
+            legendItems.append('div').html(d => d).classed('legend-item-label', true);
+
+
+
+        }
+
         //MAP CLICK
         map.on('click', function (e) {
             console.log("zoom: " + map.getZoom() + "pitch: " + map.getPitch() + "bearing: " + map.getBearing());
             // If the user clicked on one of your markers, get its information.
             var features = map.queryRenderedFeatures(e.point, {
-                layers: amenityCategories.concat(['amenities']), //.concat(['tenExchangePoint', '10-exchange-ammenities']) // replace with your layer name
+                layers: mapLayersAdded, //.concat(['tenExchangePoint', '10-exchange-ammenities']) // replace with your layer name
             });
 
             if (!features.length) {
@@ -305,15 +615,17 @@ $(document).ready(function () {
         })
 
         amenityCategoryHeaders.on("click", function (event, d) {
-            
+
             var mapCat = '';
             //find 
-            var findCat = d3.select(this).selectAll("div").filter(function(d){
+            var findCat = d3.select(this).selectAll("div").filter(function (d) {
                 return this.innerHTML != "";
             });
-            
-            findCat.each(function(d)  {mapCat = this.innerHTML});    
-            
+
+            findCat.each(function (d) {
+                mapCat = this.innerHTML
+            });
+
             // .filter(function(d) {
             //     d3.select(this).html != "";
             // }).html;
@@ -362,9 +674,6 @@ $(document).ready(function () {
         })
 
     }
-
-
-
     ////END
 });
 
@@ -379,7 +688,7 @@ function uniqueValueMap(data, column) {
 
 
         // Stripping oiut bad values.
-        data.forEach(function(d) {
+        data.forEach(function (d) {
 
             if (d['properties'][column] != null && d['properties'][column] != undefined) {
                 uniqueColumnValueMap.set(d['properties'][column], false)
@@ -397,7 +706,6 @@ function uniqueValueMap(data, column) {
 }
 
 
-
 //DATA & ICONS
 var oneBwayFeature = {
     "type": "FeatureCollection",
@@ -405,7 +713,7 @@ var oneBwayFeature = {
         "type": "Feature",
         "geometry": {
             "type": "Point",
-            "coordinates": [-74.01437444860113, 40.704838691991284], 
+            "coordinates": [-74.01437444860113, 40.704838691991284],
         },
         "properties": {
             "Name": "One Broadway",
@@ -417,6 +725,179 @@ var oneBwayFeature = {
 }
 
 
+
+var neighborhoodData = {
+    "type": "FeatureCollection",
+    "name": "neighborhoods",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [{
+            "type": "Feature",
+            "properties": {
+                "Name": "Grand Central Station",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-73.9761572, 40.7546667, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Long Island City",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-73.9581378, 40.7455883, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Downtown Brooklyn",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-73.9899532, 40.6977936, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Dumbo",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-73.9934174, 40.7039496, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Union Square",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-73.9885406, 40.7366094, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Penn Station",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-73.9903102, 40.751056, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Hoboken",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-74.0315472, 40.7371793, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Newark Airport",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-74.1823743, 40.6876171, 0.0]
+            }
+        }
+    ]
+}
+
 var amenityData = {
     "type": "FeatureCollection",
     "name": "amenities",
@@ -426,8 +907,7 @@ var amenityData = {
             "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
         }
     },
-    "features": [
-        {
+    "features": [{
             "type": "Feature",
             "geometry": {
                 "type": "Point",

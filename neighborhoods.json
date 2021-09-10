@@ -1,0 +1,171 @@
+{
+    "type": "FeatureCollection",
+    "name": "neighborhoods",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [{
+            "type": "Feature",
+            "properties": {
+                "Name": "Grand Central Station",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-73.9761572, 40.7546667, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Long Island City",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-73.9581378, 40.7455883, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Downtown Brooklyn",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-73.9899532, 40.6977936, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Dumbo",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-73.9934174, 40.7039496, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Union Square",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-73.9885406, 40.7366094, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Penn Station",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-73.9903102, 40.751056, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Hoboken",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-74.0315472, 40.7371793, 0.0]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Name": "Newark Airport",
+                "description": null,
+                "timestamp": null,
+                "begin": null,
+                "end": null,
+                "altitudeMode": null,
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": -1,
+                "drawOrder": null,
+                "icon": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-74.1823743, 40.6876171, 0.0]
+            }
+        }
+    ]
+}
