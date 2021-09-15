@@ -151,6 +151,9 @@ $(document).ready(function () {
 
             var allPops = d3.selectAll('.clear-popup').remove();
 
+
+            commuteLegend(); 
+
             
             //map.setPaintProperty('ferry', 'line-color', '#000000');
 
@@ -232,7 +235,7 @@ $(document).ready(function () {
                             // console.log(d);
                             route['coordinates'].push([d.lng(), d.lat()]);
                         })
-
+                        console.log(response.routes[0].legs.steps);
                         addNeighborhoodRouteG(route, feature.properties.Name);
                         createClearPopUpG(feature, response);
 
@@ -469,7 +472,12 @@ $(document).ready(function () {
         }
 
         function commuteLegend() {
-            
+            var legendDiv = d3.select('#map-legend');
+            legendDiv.html('');
+            legendDiv.selectAll('*').remove();
+
+
+
         }
 
         //all the popups
