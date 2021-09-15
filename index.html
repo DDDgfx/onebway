@@ -40,11 +40,12 @@
             padding: 15px 15px 15px 15px;
             /* width: 180px; */
             -webkit-text-size-adjust: 100%;
-            font-family: 'Alliance no', sans-serif;
-            color: #141414;
+            font-family: 'Neutraface Text', sans-serif;
+            color: white;
+            background-color: #141414;
             text-align: left;
             box-sizing: border-box;
-            border-radius: 4px;
+            border-radius: 30px;
             font-size: 12px;
             font-style: normal;
             font-weight: 400;
@@ -56,20 +57,20 @@
 
 
         .mapboxgl-popup-content h3 {
-            font-family: 'Alliance no', sans-serif;
-            color: #000;
+            font-family: 'Neutraface Text', sans-serif;
+            color: white;
             margin: 0;
             display: block;
-            font-size: 12px;
+            font-size: 20px;
             line-height: 18px;
-            font-weight: 400;
+            font-weight: 300;
         }
 
         .mapboxgl-popup-content h4 {
-            font-family: 'Alliance no', sans-serif;
+            font-family: 'Neutraface Text', sans-serif;
             margin: 0;
             margin-bottom: 5px;
-            color: #000;
+            color: white;
             display: block;
             font-size: 12px;
             line-height: 18px;
@@ -77,9 +78,10 @@
         }
 
         .mapboxgl-popup-content a {
-            color: #000;
-            text-decoration: underline;
+            color: #BDA664;
+            text-decoration: none;
             cursor: pointer;
+            font-weight: 600;
 
         }
 
@@ -87,6 +89,27 @@
         .mapboxgl-popup-tip {
             box-shadow: 4px 4px 4px -1px rgba(0, 0, 0, 0.1);
         }
+
+        .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
+        .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
+        .mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+            border-bottom-color: #141414;
+        }
+
+        .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+        .mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+        .mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+            border-top-color: #141414;
+        }
+
+        .mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+            border-right-color: #141414;
+        }
+
+        .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+            border-left-color: #141414;
+        }
+
 
         /* //Clear popup */
         .clear-popup .mapboxgl-popup-close-button {
@@ -173,7 +196,7 @@
                     Washington’s Revolutionary War headquarters, to the office of Cyrus Field the creator of the first
                     transatlantic cable, to J.P. Morgan’s steamship empire the International Mercantile Marine Company.
                 </div>
-                <div id='map-legend' class="two-col">Some stuff here</div>
+                <div id='map-legend' class="two-col"></div>
             </div>
             <div id="map-ux" class="animated-tabs-wrapper w-tab-menu" role="tablist">
                 <a data-w-tab="Commute Time" data-w-id="4de5a622-ef30-210a-9de9-c1d56414e488"

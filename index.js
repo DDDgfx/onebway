@@ -149,26 +149,12 @@ $(document).ready(function () {
             map.setLayoutProperty('citibike stations', 'visibility', 'none');
             map.setLayoutProperty('bike lanes', 'visibility', 'none');
 
-            var allPops = d3.selectAll('.clear-popup').remove();
+            d3.selectAll('.mapboxgl-popup').remove();
 
+            var legendDiv = d3.select('#map-legend');
+            legendDiv.html('');
+            legendDiv.selectAll('*').remove();
 
-            commuteLegend(); 
-
-            
-            //map.setPaintProperty('ferry', 'line-color', '#000000');
-
-
-            //map.resize();
-            // Add a GeoJSON source for all amenities
-            //map.removeSource('locationPoints');
-            //map.getSource('locationPoints').setData(locations);
-
-            // if (!map.getSource('locationPoints')) {
-            //     console.log("locations is not here");
-            // }
-
-            // console.log(map.getStyle().layers);
-            //console.log(mapLayersAdded);
 
             mapLayersAdded.forEach(function (d) {
                 if (map.getLayer(d)) {
@@ -177,6 +163,8 @@ $(document).ready(function () {
 
             })
 
+            mapLayersAdded = [];
+
             if (!map.getSource('neighborhoodPoints')) {
                 map.addSource('neighborhoodPoints', {
                     'type': 'geojson',
@@ -184,8 +172,6 @@ $(document).ready(function () {
     
                 });
             }
-
-
 
             map.addLayer({
                 'id': 'neighborhoods',
@@ -212,8 +198,8 @@ $(document).ready(function () {
                 var feature_y = feature.geometry.coordinates[1];
                 var googleCoords = feature_y + ',' + feature_x;
 
-                //directions example request.
-                var reqUrl = "https://api.mapbox.com/directions/v5/mapbox/" + commuteType + '/' + oneBway_x + '%2C' + oneBway_y + '%3B' + feature_x + '%2C' + feature_y + '?alternatives=false&geometries=geojson&steps=false&access_token=pk.eyJ1IjoiY2l6emxlIiwiYSI6ImNrcDJ0MjhteTE5cGsyb213bms0dHp6c3QifQ.-dc9k9y6KKnDlE5UszjS9A';
+                //Mapboox directions example request.
+                //var reqUrl = "https://api.mapbox.com/directions/v5/mapbox/" + commuteType + '/' + oneBway_x + '%2C' + oneBway_y + '%3B' + feature_x + '%2C' + feature_y + '?alternatives=false&geometries=geojson&steps=false&access_token=pk.eyJ1IjoiY2l6emxlIiwiYSI6ImNrcDJ0MjhteTE5cGsyb213bms0dHp6c3QifQ.-dc9k9y6KKnDlE5UszjS9A';
 
                 const directionsService = new google.maps.DirectionsService();
 
@@ -235,21 +221,18 @@ $(document).ready(function () {
                             // console.log(d);
                             route['coordinates'].push([d.lng(), d.lat()]);
                         })
-                        console.log(response.routes[0].legs.steps);
                         addNeighborhoodRouteG(route, feature.properties.Name);
                         createClearPopUpG(feature, response);
+                        commuteLegend(response, feature.properties.Name); 
 
                        }
                 )
-
-                //AIzaSyAW2bdPy8GEgbDO9l4v-uZRV3T51YCmi6A
-
-
-                d3.json(reqUrl).then(function (d) {
-                    //console.log(d);
-                    // addNeighborhoodRoute(d, feature.properties.Name);
-                    // createClearPopUp(feature, d);
-                })
+                //mapbxo request - not in use
+                // d3.json(reqUrl).then(function (d) {
+                //     console.log(d);
+                //     addNeighborhoodRoute(d, feature.properties.Name);
+                //     createClearPopUp(feature, d);
+                // })
 
             })
 
@@ -271,18 +254,16 @@ $(document).ready(function () {
         function transportationMode() {
             console.log(map.getStyle().layers);
 
+            var legendDiv = d3.select('#map-legend');
+            legendDiv.html('');
+            legendDiv.selectAll('*').remove();
+
             map.flyTo({
                 center: [-74.01437444860113, 40.704838691991284],
                 zoom: 14
             });
-
-            var popUps = document.getElementsByClassName('mapboxgl-popup');
-            console.log(popUps);
-
-            if (popUps[0])  for (item of popUps) {
-                item.remove();
-            };
-
+            
+            d3.selectAll('.mapboxgl-popup').remove();
             //popUps.forEach(d => d.remove())
             
             map.setPaintProperty('ferry', 'line-color', '#6699CC');
@@ -293,17 +274,6 @@ $(document).ready(function () {
             map.setLayoutProperty('citibike stations', 'visibility', 'none');
             map.setLayoutProperty('bike lanes', 'visibility', 'none');
 
-
-            //map.resize();
-            // Add a GeoJSON source for all amenities
-            //map.removeSource('locationPoints');
-            //map.getSource('locationPoints').setData(locations);
-
-            // if (!map.getSource('locationPoints')) {
-            //     console.log("locations is not here");
-            // }
-
-            // console.log(map.getStyle().layers);
             console.log(mapLayersAdded);
 
             mapLayersAdded.forEach(function (d) {
@@ -313,6 +283,16 @@ $(document).ready(function () {
 
             })
 
+            mapLayersAdded = [];
+
+            var bounds = new mapboxgl.LngLatBounds([-74.04070778411328,40.69483814140284], [-73.98157251142398,40.71982111512975]);
+
+            map.fitBounds(bounds, {
+                padding: 0,
+                pitch: 0,
+                bearing: 0
+            });
+
 
 
         }
@@ -320,7 +300,11 @@ $(document).ready(function () {
         function citibikeMode() {
             console.log(map.getStyle().layers);
 
-            var allPops = d3.selectAll('.clear-popup').remove();
+            var legendDiv = d3.select('#map-legend');
+            legendDiv.html('');
+            legendDiv.selectAll('*').remove();
+
+            d3.selectAll('.mapboxgl-popup').remove();
             
             map.setPaintProperty('ferry', 'line-color', '#fff');
             map.setLayoutProperty('nyc subways', 'visibility', 'none');
@@ -350,12 +334,16 @@ $(document).ready(function () {
 
             })
 
+            mapLayersAdded = [];
+
 
 
         }
 
         function amenityMode() {
-
+            var legendDiv = d3.select('#map-legend');
+            legendDiv.html('');
+            legendDiv.selectAll('*').remove();
             //map.resize();
             // Add a GeoJSON source for all amenities
             //map.removeSource('locationPoints');
@@ -365,7 +353,7 @@ $(document).ready(function () {
             //     console.log("locations is not here");
             // }
 
-            var allPops = d3.selectAll('.clear-popup').remove();
+            d3.selectAll('.mapboxgl-popup').remove();
 
 
             console.log(map.getStyle().layers);
@@ -434,8 +422,8 @@ $(document).ready(function () {
                         'source': 'amenityPoints',
                         'layout': {
                             'icon-image': iconScale(category),
-                            'icon-anchor': 'bottom',
-                            'icon-size': 1,
+                            'icon-anchor': 'center',
+                            'icon-size': .75,
                             'icon-allow-overlap': true
                         },
                         'filter': ['==', 'subcategory', category]
@@ -458,45 +446,64 @@ $(document).ready(function () {
             });
 
 
-            map.flyTo({
-                center: [-74.01437444860113, 40.704838691991284],
-                zoom: 15
-            });
-
-            // map.fitBounds(bounds, {
-            //     padding: 25,
-            //     pitch: 0,
-            //     bearing: 0
+            // map.flyTo({
+            //     center: [-74.01437444860113, 40.704838691991284],
+            //     zoom: 15
             // });
+
+            map.fitBounds(bounds, {
+                padding: 25,
+                pitch: 0,
+                bearing: 0
+            });
 
         }
 
-        function commuteLegend() {
+        function commuteLegend(directions, placeName) {
             var legendDiv = d3.select('#map-legend');
-            legendDiv.html('');
-            legendDiv.selectAll('*').remove();
 
-
+            console.log(directions.routes[0].legs[0]);
+            var duration = directions.routes[0].legs[0].duration.text;
+            legendDiv.append('div').html(duration + ' from ' + placeName);
 
         }
 
         //all the popups
         function createPopUp(feature) {
-            var description = feature.properties.Category;
-            var id = feature.properties.id;
-            console.log(feature.properties.Name);
+
+            var name; 
+            
+            if (feature.properties.Name) { name = feature.properties.Name } 
+                else if (feature.properties.name) {name = feature.properties.name} 
+                else if (feature.properties.stationName) {name = feature.properties.stationName};
+
+
+            var url = feature.properties.url ? '↗' : '';
+
 
             //ADD POP UP
             var popUps = document.getElementsByClassName('mapboxgl-popup');
             if (popUps[0]) popUps[0].remove();
 
+            var popupOffsets = {
+                'top': [0, 5],
+                'top-left': [0, 0],
+                'top-right': [0, 0],
+                'bottom': [0, -10],
+                'bottom-left': [0, 0],
+                'bottom-right': [0, 0],
+                'left': [0, 0],
+                'right': [0, 0]
+            };
+
             var popup = new mapboxgl.Popup({
-                    offset: [0, -25]
+                    offset: popupOffsets,
+                    focusAfterOpen: false,
+                    maxWidth: 'none'
                 })
                 .setLngLat(feature.geometry.coordinates)
                 .setHTML(
-                    '<h3>' + feature.properties.Name + '</h3>' +
-                    '<h3><a target="_blank" href="' + feature.properties["Google Business URL"] + '">directions</a></h3>'
+                    '<h3>' + name + '<a target="_blank" href="' + feature.properties.url + '">' + url + '</a></h3>'
                 )
                 .addTo(map);
 
@@ -516,7 +523,7 @@ $(document).ready(function () {
             //     addRoute(d);
             // })
 
-            addMarker(feature);
+            // addMarker(feature);
         }
 
         function createClearPopUp(feature, directionsData) {
@@ -760,24 +767,11 @@ $(document).ready(function () {
             console.log("zoom: " + map.getZoom() + " pitch: " + map.getPitch() + " bearing: " + map.getBearing() + " coords: [" + e.lngLat.lng + ',' + e.lngLat.lat + ']');
             // If the user clicked on one of your markers, get its information.
             var features = map.queryRenderedFeatures(e.point, {
-                layers: mapLayersAdded, //.concat(['tenExchangePoint', '10-exchange-ammenities']) // replace with your layer name
+                layers: mapLayersAdded.concat(['citibike stations', 'transit-label', 'nyc subway stations']), // replace with your layer name
             });
 
-            if (!features.length) {
-                return;
-            }
             var feature = features[0];
 
-            amenityListItems.transition().style("opacity", .25);
-
-            // amenityListItems.filter(d => d.Name == feature.properties.Name).transition().style("opacity", 1);
-            amenityListItems.each(function (d) {
-                var featureName = d3.select(this).select('div').select('div').html();
-                featureName = featureName.replace('&amp;', '&');
-                if (featureName == feature.properties.Name) {
-                    d3.select(this).transition().style("opacity", 1);
-                }
-            })
             console.log(feature);
 
             createPopUp(feature);
@@ -1116,7 +1110,7 @@ var amenityData = {
                 "category": "Lifestyle",
                 "subcategory": "Landmarks",
                 "Address": "Pier 25, West St, New York, NY 10013",
-                "Google Business URL": "https://www.sailsunset.com/"
+                "url": "https://www.sailsunset.com/"
             }
         },
         {
@@ -1131,7 +1125,7 @@ var amenityData = {
                 "category": "Lifestyle",
                 "subcategory": "Landmarks",
                 "Address": "North Cove Marina at Brookfield Place, New York, NY 10281",
-                "Google Business URL": "https://www.sailnewyork.com/"
+                "urlGoogle Business URL": "https://www.sailnewyork.com/"
             }
         },
         {
