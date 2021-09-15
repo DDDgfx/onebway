@@ -7,7 +7,6 @@ $(document).ready(function () {
     console.log("ready steady!");
     // THE WHOLE MAP INSIDE THIS CONDITIONAL.
     if (d3.select("#map")) {
-        console.log("map init");
         ////MAPBOX
         mapboxgl.accessToken = 'pk.eyJ1IjoiY2l6emxlIiwiYSI6ImNrcDJ0MjhteTE5cGsyb213bms0dHp6c3QifQ.-dc9k9y6KKnDlE5UszjS9A';
         //Create the map
@@ -85,17 +84,12 @@ $(document).ready(function () {
             else if (mode == 'Point of Interest') { amenityMode(); }
         })
 
-        console.log(uxBtns);
-
-
-        map.on('dataloading', () => {
-            //console.log('A dataloading event occurred.');
-            });
-
         //Map init
         map.on('load', function () {
             
             console.log('load');
+
+            map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
 
             map.flyTo({
                 center: [-74.01437444860113, 40.704838691991284],
@@ -148,10 +142,15 @@ $(document).ready(function () {
 
             console.log(commuteType);
             console.log(map.getStyle().layers);
+            map.setPaintProperty('ferry', 'line-color', '#fff');
             map.setLayoutProperty('nyc subways', 'visibility', 'none');
             map.setLayoutProperty('nyc subways shadow', 'visibility', 'none');
             map.setLayoutProperty('nyc subway stations', 'visibility', 'none');
             map.setLayoutProperty('citibike stations', 'visibility', 'none');
+            map.setLayoutProperty('bike lanes', 'visibility', 'none');
+
+            var allPops = d3.selectAll('.clear-popup').remove();
+
             
             //map.setPaintProperty('ferry', 'line-color', '#000000');
 
@@ -166,7 +165,7 @@ $(document).ready(function () {
             // }
 
             // console.log(map.getStyle().layers);
-            console.log(mapLayersAdded);
+            //console.log(mapLayersAdded);
 
             mapLayersAdded.forEach(function (d) {
                 if (map.getLayer(d)) {
@@ -213,8 +212,6 @@ $(document).ready(function () {
                 //directions example request.
                 var reqUrl = "https://api.mapbox.com/directions/v5/mapbox/" + commuteType + '/' + oneBway_x + '%2C' + oneBway_y + '%3B' + feature_x + '%2C' + feature_y + '?alternatives=false&geometries=geojson&steps=false&access_token=pk.eyJ1IjoiY2l6emxlIiwiYSI6ImNrcDJ0MjhteTE5cGsyb213bms0dHp6c3QifQ.-dc9k9y6KKnDlE5UszjS9A';
 
-                // var googleReqURL = 'https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyAW2bdPy8GEgbDO9l4v-uZRV3T51YCmi6A'
-
                 const directionsService = new google.maps.DirectionsService();
 
 
@@ -253,15 +250,15 @@ $(document).ready(function () {
 
             })
 
-            var bounds = new mapboxgl.LngLatBounds();
+            var bounds = new mapboxgl.LngLatBounds([-74.06547906123738,40.68009370950463], [-73.93430769956821,40.76564283242632]);
 
-            neighborhoodData.features.forEach(function (feature) {
-                bounds.extend(feature.geometry.coordinates)
-            });
+            // neighborhoodData.features.forEach(function (feature) {
+            //     bounds.extend(feature.geometry.coordinates)
+            // });
 
 
             map.fitBounds(bounds, {
-                padding: 25,
+                padding: 0,
                 pitch: 0,
                 bearing: 0
             });
@@ -270,12 +267,28 @@ $(document).ready(function () {
 
         function transportationMode() {
             console.log(map.getStyle().layers);
+
+            map.flyTo({
+                center: [-74.01437444860113, 40.704838691991284],
+                zoom: 14
+            });
+
+            var popUps = document.getElementsByClassName('mapboxgl-popup');
+            console.log(popUps);
+
+            if (popUps[0])  for (item of popUps) {
+                item.remove();
+            };
+
+            //popUps.forEach(d => d.remove())
             
-            // map.setPaintProperty('ferry', 'line-color', '#000000');
+            map.setPaintProperty('ferry', 'line-color', '#6699CC');
             map.setLayoutProperty('nyc subways', 'visibility', 'visible');
             map.setLayoutProperty('nyc subways shadow', 'visibility', 'visible');
             map.setLayoutProperty('nyc subway stations', 'visibility', 'visible');
+            map.setLayoutProperty('transit-label', 'visibility', 'visible');
             map.setLayoutProperty('citibike stations', 'visibility', 'none');
+            map.setLayoutProperty('bike lanes', 'visibility', 'none');
 
 
             //map.resize();
@@ -303,12 +316,16 @@ $(document).ready(function () {
 
         function citibikeMode() {
             console.log(map.getStyle().layers);
+
+            var allPops = d3.selectAll('.clear-popup').remove();
             
             map.setPaintProperty('ferry', 'line-color', '#fff');
             map.setLayoutProperty('nyc subways', 'visibility', 'none');
             map.setLayoutProperty('nyc subways shadow', 'visibility', 'none');
             map.setLayoutProperty('nyc subway stations', 'visibility', 'none');
+            map.setLayoutProperty('transit-label', 'visibility', 'none');
             map.setLayoutProperty('citibike stations', 'visibility', 'visible');
+            map.setLayoutProperty('bike lanes', 'visibility', 'visible');
 
 
             //map.resize();
@@ -345,13 +362,14 @@ $(document).ready(function () {
             //     console.log("locations is not here");
             // }
 
+            var allPops = d3.selectAll('.clear-popup').remove();
+
+
             console.log(map.getStyle().layers);
             console.log(mapLayersAdded);
 
             mapLayersAdded.forEach(function (d) {
-                console.log(d);
                 if (map.getLayer(d)) {
-                    console.log('its here');
                     map.removeLayer(d);
                 }
 
@@ -360,18 +378,24 @@ $(document).ready(function () {
             mapLayersAdded = [];
 
                         
-            map.setPaintProperty('ferry', 'line-color', '#000000');
+            map.setPaintProperty('ferry', 'line-color', '#fff');
             map.setLayoutProperty('nyc subways', 'visibility', 'none');
             map.setLayoutProperty('nyc subways shadow', 'visibility', 'none');
             map.setLayoutProperty('nyc subway stations', 'visibility', 'none');
             map.setLayoutProperty('citibike stations', 'visibility', 'none');
+            map.setLayoutProperty('bike lanes', 'visibility', 'none');
 
             // Add a GeoJSON source for all amenities
-            map.addSource('amenityPoints', {
-                'type': 'geojson',
-                'data': amenityData
+            if (!map.getSource('amenityPoints')) {
+                map.addSource('amenityPoints', {
+                    'type': 'geojson',
+                    'data': amenityData
+    
+                });
+            }
 
-            });
+
+
 
             mapSourcesAdded.push('amenityPoints');
 
@@ -424,21 +448,6 @@ $(document).ready(function () {
             var oneBway_x = oneBwayFeature.features[0].geometry.coordinates[0];
             var oneBway_y = oneBwayFeature.features[0].geometry.coordinates[1];
 
-            neighborhoodData.features.forEach(function (feature) {
-                var feature_x = feature.geometry.coordinates[0];
-                var feature_y = feature.geometry.coordinates[1];
-
-                //directions example request.
-                var reqUrl = "https://api.mapbox.com/directions/v5/mapbox/walking/" + oneBway_x + '%2C' + oneBway_y + '%3B' + feature_x + '%2C' + feature_y + '?alternatives=false&geometries=geojson&steps=false&access_token=pk.eyJ1IjoiY2l6emxlIiwiYSI6ImNrcDJ0MjhteTE5cGsyb213bms0dHp6c3QifQ.-dc9k9y6KKnDlE5UszjS9A';
-
-
-                d3.json(reqUrl).then(function (d) {
-                    //console.log(d);
-                    addNeighborhoodRoute(d, feature.properties.Name);
-                })
-
-            })
-
             var bounds = new mapboxgl.LngLatBounds();
 
             amenityData.features.forEach(function (feature) {
@@ -446,15 +455,22 @@ $(document).ready(function () {
             });
 
 
-            map.fitBounds(bounds, {
-                padding: 25,
-                pitch: 0,
-                bearing: 0
+            map.flyTo({
+                center: [-74.01437444860113, 40.704838691991284],
+                zoom: 15
             });
+
+            // map.fitBounds(bounds, {
+            //     padding: 25,
+            //     pitch: 0,
+            //     bearing: 0
+            // });
 
         }
 
-
+        function commuteLegend() {
+            
+        }
 
         //all the popups
         function createPopUp(feature) {
@@ -535,7 +551,7 @@ $(document).ready(function () {
 
         function createClearPopUpG(feature, directionsData) {
 
-            console.log(directionsData);
+            // console.log(directionsData);
             var duration = directionsData.routes[0].legs[0].duration.text;
             //ADD POP UP
             // var popUps = document.getElementsByClassName('mapboxgl-popup');
@@ -733,7 +749,7 @@ $(document).ready(function () {
 
         //MAP CLICK
         map.on('click', function (e) {
-            console.log("zoom: " + map.getZoom() + "pitch: " + map.getPitch() + "bearing: " + map.getBearing());
+            console.log("zoom: " + map.getZoom() + " pitch: " + map.getPitch() + " bearing: " + map.getBearing() + " coords: [" + e.lngLat.lng + ',' + e.lngLat.lat + ']');
             // If the user clicked on one of your markers, get its information.
             var features = map.queryRenderedFeatures(e.point, {
                 layers: mapLayersAdded, //.concat(['tenExchangePoint', '10-exchange-ammenities']) // replace with your layer name
