@@ -5,8 +5,6 @@ var mapSourcesAdded = [];
 $(document).ready(function () {
 
     console.log("ready steady!");
-
-
     // THE WHOLE MAP INSIDE THIS CONDITIONAL.
     if (d3.select("#map")) {
         console.log("map init");
@@ -17,18 +15,21 @@ $(document).ready(function () {
             container: 'map',
             style: 'mapbox://styles/cizzle/ckt0bxdf7247z18nyfdyg0jxz',
             center: [-74.01437444860113, 40.704838691991284], // starting position [lng, lat]
-            zoom: 14, // starting zoom
+            zoom: 12, // starting zoom
             bearing: 0, //bearing
             pitch: 0,
+            scrollZoom: false
             //interactive: false
         });
 
         //The list of amenity categories.
-        var amenityCategories = Array.from(uniqueValueMap(amenityData.features, 'subcategory').keys());
+        var amenityCategories = Array.from(uniqueValueMap(amenityData.features, 'subcategory').keys()).sort();
+        console.log(amenityCategories)
         //to be recorded if you want category specific behavior.
         var currentCategory;
         //var iconScale = d3.scaleOrdinal(['attractions', 'fitness', 'food', 'hotels', 'retail', 'services', 'transit']).domain(amenityCategories);
-        var iconScale = d3.scaleOrdinal(['1b_dot_sm']).domain(amenityCategories);
+        var iconScale = d3.scaleOrdinal(['1b_bars', '1b_cafes', '1b_health', '1b_hotels', '1b_landmarks', '1b_restaurants', '1b_retail']).domain(amenityCategories);
+        //['Bars', 'Cafes', 'Health', 'Hotels', 'Landmarks', 'Restaurants', 'Retail']
         //to pan and zoom for each category in the list.
         var catAngles = {
             'Attractions': {
@@ -74,73 +75,34 @@ $(document).ready(function () {
 
         var uxBtns = uxDiv.selectAll('a').on('click', function(e) {
 
-            console.log(d3.select(this).attr('data-w-tab'));
+            var mode = d3.select(this).attr('data-w-tab');
             console.log(e);
+            console.log(mode);
+
+            if (mode == 'Transportation') { transportationMode();}
+            else if (mode == 'Commute Time') { commuteMode('walking'); }
+            else if (mode == 'Cycle') {citibikeMode();}
+            else if (mode == 'Point of Interest') { amenityMode(); }
         })
 
         console.log(uxBtns);
 
 
-
-
-
+        map.on('dataloading', () => {
+            //console.log('A dataloading event occurred.');
+            });
 
         //Map init
         map.on('load', function () {
-            // // Add a GeoJSON source for all amenities
-            // map.addSource('amenityPoints', {
-            //     'type': 'geojson',
-            //     'data': amenityData
+            
+            console.log('load');
 
-            // });
+            map.flyTo({
+                center: [-74.01437444860113, 40.704838691991284],
+                zoom: 13
+            });
 
-            // mapSourcesAdded.push('amenityPoints');
-
-
-            // map.addLayer({
-            //     'id': 'amenities',
-            //     'type': 'symbol',
-            //     'source': 'amenityPoints',
-            //     'layout': {
-            //         'icon-image': '1b_dot_sm',
-            //         'icon-anchor': 'center',
-            //         'icon-size': 1,
-            //         'icon-allow-overlap': true
-            //     }
-            // });
-
-            // mapLayersAdded.push('amenities');
-
-            // //for each ammenity
-            // amenityData.features.forEach(function (feature) {
-            //     //find the category name
-            //     var category = feature.properties['subcategory'];
-
-            //     if (!mapLayersAdded.includes(category)) {
-            //         mapLayersAdded.push(category)
-            //     };
-            //     //and if it has not been done, add the category as a layer and use the filter to add all the features that match.
-            //     if (!map.getLayer(category)) {
-            //         map.addLayer({
-            //             'id': category,
-            //             'type': 'symbol',
-            //             'source': 'amenityPoints',
-            //             'layout': {
-            //                 'icon-image': iconScale(category),
-            //                 'icon-anchor': 'bottom',
-            //                 'icon-size': 1,
-            //                 'icon-allow-overlap': true
-            //             },
-            //             'filter': ['==', 'subcategory', category]
-            //         });
-            //     }
-            //     //and make it invisible to start.
-            //     map.setLayoutProperty(category, 'visibility', 'none');
-
-
-            // })
-
-            //add a geo JSON source for 10 Exchange place. alone.
+             //add a geo JSON source for 10 Exchange place. alone.
             map.addSource('oneBway', {
                 'type': 'geojson',
                 'data': oneBwayFeature
@@ -161,14 +123,38 @@ $(document).ready(function () {
             });
 
 
-            commuteMode(neighborhoodData);
+            map.addLayer({
+                'id': 'oneBwayIcons',
+                'type': 'symbol',
+                'source': 'oneBway',
+                'layout': {
+                    'icon-image': '1b_1b',
+                    // 'text-field' : ['get', 'Name'],
+                    'icon-anchor': 'bottom-right',
+                    'icon-size': 2,
+                    'icon-allow-overlap': true,
+                    'icon-offset': [-10, -10] 
+                }
+            });
+
+            
+            commuteMode('driving');
 
         });
 
-
         // Update map
         //Map update
-        function commuteMode(locations) {
+        function commuteMode(commuteType) {
+
+            console.log(commuteType);
+            console.log(map.getStyle().layers);
+            map.setLayoutProperty('nyc subways', 'visibility', 'none');
+            map.setLayoutProperty('nyc subways shadow', 'visibility', 'none');
+            map.setLayoutProperty('nyc subway stations', 'visibility', 'none');
+            map.setLayoutProperty('citibike stations', 'visibility', 'none');
+            
+            //map.setPaintProperty('ferry', 'line-color', '#000000');
+
 
             //map.resize();
             // Add a GeoJSON source for all amenities
@@ -180,21 +166,24 @@ $(document).ready(function () {
             // }
 
             // console.log(map.getStyle().layers);
+            console.log(mapLayersAdded);
 
             mapLayersAdded.forEach(function (d) {
                 if (map.getLayer(d)) {
                     map.removeLayer(d);
-                    mapLayersAdded.splice(mapLayersAdded.indexOf(d), 1)
-                    console.log(mapLayersAdded);
                 }
 
             })
 
-            map.addSource('neighborhoodPoints', {
-                'type': 'geojson',
-                'data': neighborhoodData
+            if (!map.getSource('neighborhoodPoints')) {
+                map.addSource('neighborhoodPoints', {
+                    'type': 'geojson',
+                    'data': neighborhoodData
+    
+                });
+            }
 
-            });
+
 
             map.addLayer({
                 'id': 'neighborhoods',
@@ -214,18 +203,52 @@ $(document).ready(function () {
             //draw the route to the location
             var oneBway_x = oneBwayFeature.features[0].geometry.coordinates[0];
             var oneBway_y = oneBwayFeature.features[0].geometry.coordinates[1];
+            var oneBwayGoogleCoords = oneBway_y + ',' + oneBway_x;
 
             neighborhoodData.features.forEach(function (feature) {
                 var feature_x = feature.geometry.coordinates[0];
                 var feature_y = feature.geometry.coordinates[1];
+                var googleCoords = feature_y + ',' + feature_x;
 
                 //directions example request.
-                var reqUrl = "https://api.mapbox.com/directions/v5/mapbox/walking/" + oneBway_x + '%2C' + oneBway_y + '%3B' + feature_x + '%2C' + feature_y + '?alternatives=false&geometries=geojson&steps=false&access_token=pk.eyJ1IjoiY2l6emxlIiwiYSI6ImNrcDJ0MjhteTE5cGsyb213bms0dHp6c3QifQ.-dc9k9y6KKnDlE5UszjS9A';
+                var reqUrl = "https://api.mapbox.com/directions/v5/mapbox/" + commuteType + '/' + oneBway_x + '%2C' + oneBway_y + '%3B' + feature_x + '%2C' + feature_y + '?alternatives=false&geometries=geojson&steps=false&access_token=pk.eyJ1IjoiY2l6emxlIiwiYSI6ImNrcDJ0MjhteTE5cGsyb213bms0dHp6c3QifQ.-dc9k9y6KKnDlE5UszjS9A';
+
+                // var googleReqURL = 'https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyAW2bdPy8GEgbDO9l4v-uZRV3T51YCmi6A'
+
+                const directionsService = new google.maps.DirectionsService();
+
+
+                directionsService.route(
+                    {
+                            origin: googleCoords,
+                            destination: oneBwayGoogleCoords,
+                            travelMode: "TRANSIT"
+                    },
+                    (response, status) => {
+                        //console.log(response);
+                        var route = {
+                            'type': 'LineString',
+                            'coordinates': []
+                        };
+                        var path = response.routes[0].overview_path;
+                        path.forEach(d => {
+                            // console.log(d);
+                            route['coordinates'].push([d.lng(), d.lat()]);
+                        })
+
+                        addNeighborhoodRouteG(route, feature.properties.Name);
+                        createClearPopUpG(feature, response);
+
+                       }
+                )
+
+                //AIzaSyAW2bdPy8GEgbDO9l4v-uZRV3T51YCmi6A
 
 
                 d3.json(reqUrl).then(function (d) {
                     //console.log(d);
-                    addNeighborhoodRoute(d, feature.properties.Name);
+                    // addNeighborhoodRoute(d, feature.properties.Name);
+                    // createClearPopUp(feature, d);
                 })
 
             })
@@ -245,7 +268,73 @@ $(document).ready(function () {
 
         }
 
-        function amenityMode(locations) {
+        function transportationMode() {
+            console.log(map.getStyle().layers);
+            
+            // map.setPaintProperty('ferry', 'line-color', '#000000');
+            map.setLayoutProperty('nyc subways', 'visibility', 'visible');
+            map.setLayoutProperty('nyc subways shadow', 'visibility', 'visible');
+            map.setLayoutProperty('nyc subway stations', 'visibility', 'visible');
+            map.setLayoutProperty('citibike stations', 'visibility', 'none');
+
+
+            //map.resize();
+            // Add a GeoJSON source for all amenities
+            //map.removeSource('locationPoints');
+            //map.getSource('locationPoints').setData(locations);
+
+            // if (!map.getSource('locationPoints')) {
+            //     console.log("locations is not here");
+            // }
+
+            // console.log(map.getStyle().layers);
+            console.log(mapLayersAdded);
+
+            mapLayersAdded.forEach(function (d) {
+                if (map.getLayer(d)) {
+                    map.removeLayer(d);
+                }
+
+            })
+
+
+
+        }
+
+        function citibikeMode() {
+            console.log(map.getStyle().layers);
+            
+            map.setPaintProperty('ferry', 'line-color', '#fff');
+            map.setLayoutProperty('nyc subways', 'visibility', 'none');
+            map.setLayoutProperty('nyc subways shadow', 'visibility', 'none');
+            map.setLayoutProperty('nyc subway stations', 'visibility', 'none');
+            map.setLayoutProperty('citibike stations', 'visibility', 'visible');
+
+
+            //map.resize();
+            // Add a GeoJSON source for all amenities
+            //map.removeSource('locationPoints');
+            //map.getSource('locationPoints').setData(locations);
+
+            // if (!map.getSource('locationPoints')) {
+            //     console.log("locations is not here");
+            // }
+
+            // console.log(map.getStyle().layers);
+            console.log(mapLayersAdded);
+
+            mapLayersAdded.forEach(function (d) {
+                if (map.getLayer(d)) {
+                    map.removeLayer(d);
+                }
+
+            })
+
+
+
+        }
+
+        function amenityMode() {
 
             //map.resize();
             // Add a GeoJSON source for all amenities
@@ -257,15 +346,25 @@ $(document).ready(function () {
             // }
 
             console.log(map.getStyle().layers);
+            console.log(mapLayersAdded);
 
             mapLayersAdded.forEach(function (d) {
+                console.log(d);
                 if (map.getLayer(d)) {
+                    console.log('its here');
                     map.removeLayer(d);
-                    mapLayersAdded.splice(mapLayersAdded.indexOf(d), 1)
-                    console.log(mapLayersAdded);
                 }
 
             })
+
+            mapLayersAdded = [];
+
+                        
+            map.setPaintProperty('ferry', 'line-color', '#000000');
+            map.setLayoutProperty('nyc subways', 'visibility', 'none');
+            map.setLayoutProperty('nyc subways shadow', 'visibility', 'none');
+            map.setLayoutProperty('nyc subway stations', 'visibility', 'none');
+            map.setLayoutProperty('citibike stations', 'visibility', 'none');
 
             // Add a GeoJSON source for all amenities
             map.addSource('amenityPoints', {
@@ -277,22 +376,23 @@ $(document).ready(function () {
             mapSourcesAdded.push('amenityPoints');
 
 
-            map.addLayer({
-                'id': 'amenities',
-                'type': 'symbol',
-                'source': 'amenityPoints',
-                'layout': {
-                    'icon-image': '1b_dot_sm',
-                    'icon-anchor': 'center',
-                    'icon-size': 1,
-                    'icon-allow-overlap': true
-                }
-            });
+            // map.addLayer({
+            //     'id': 'amenities',
+            //     'type': 'symbol',
+            //     'source': 'amenityPoints',
+            //     'layout': {
+            //         'icon-image': '1b_dot_sm',
+            //         'icon-anchor': 'center',
+            //         'icon-size': 1,
+            //         'icon-allow-overlap': true
+            //     }
+            // });
 
-            mapLayersAdded.push('amenities');
+            // mapLayersAdded.push('amenities');
 
             //for each ammenity
             amenityData.features.forEach(function (feature) {
+                //console.log(feature);
                 //find the category name
                 var category = feature.properties['subcategory'];
 
@@ -315,32 +415,10 @@ $(document).ready(function () {
                     });
                 }
                 //and make it invisible to start.
-                map.setLayoutProperty(category, 'visibility', 'none');
+                //map.setLayoutProperty(category, 'visibility', 'none');
 
 
             })
-
-            //add a geo JSON source for 10 Exchange place. alone.
-            map.addSource('oneBway', {
-                'type': 'geojson',
-                'data': oneBwayFeature
-
-            });
-            //add a layer for 10 Exchange
-            map.addLayer({
-                'id': 'oneBwayPoint',
-                'type': 'symbol',
-                'source': 'oneBway',
-                'layout': {
-                    'icon-image': '1b_dot',
-                    // 'text-field' : ['get', 'Name'],
-                    'icon-anchor': 'bottom',
-                    'icon-size': 1,
-                    'icon-allow-overlap': true
-                }
-            });
-
-
 
             //draw the route to the location
             var oneBway_x = oneBwayFeature.features[0].geometry.coordinates[0];
@@ -363,7 +441,7 @@ $(document).ready(function () {
 
             var bounds = new mapboxgl.LngLatBounds();
 
-            neighborhoodData.features.forEach(function (feature) {
+            amenityData.features.forEach(function (feature) {
                 bounds.extend(feature.geometry.coordinates)
             });
 
@@ -375,9 +453,6 @@ $(document).ready(function () {
             });
 
         }
-
-
-
 
 
 
@@ -397,7 +472,6 @@ $(document).ready(function () {
                 .setLngLat(feature.geometry.coordinates)
                 .setHTML(
                     '<h3>' + feature.properties.Name + '</h3>' +
-                    '<h4>' + description + '</h4>' +
                     '<h3><a target="_blank" href="' + feature.properties["Google Business URL"] + '">directions</a></h3>'
                 )
                 .addTo(map);
@@ -421,22 +495,81 @@ $(document).ready(function () {
             addMarker(feature);
         }
 
+        function createClearPopUp(feature, directionsData) {
 
-
-        function addNeighborhoodRoute(d, layerName) {
-
-
-            console.log(d);
-
-            var route = d.routes[0].geometry;
-            var duration = d.routes[0].duration;
+            var duration = directionsData.routes[0].duration;
             var minutes = Math.floor(duration / 60);
 
             var hours = Math.floor(minutes / 60);
             var extraMinutes = (minutes % 60);
 
-            console.log(hours + " hours and " + extraMinutes + " minutes");
+            var timeString = hours + " hours and " + extraMinutes + " minutes";
 
+            //ADD POP UP
+            // var popUps = document.getElementsByClassName('mapboxgl-popup');
+            // if (popUps[0]) popUps[0].remove();
+
+            var popup = new mapboxgl.Popup({
+                    offset: [0, 0],
+                    className: 'clear-popup'
+                })
+                .setLngLat(feature.geometry.coordinates)
+                .setHTML(
+                    '<h3>' + feature.properties.Name + '</h3>' +
+                    '<h4>' + timeString + '</h4>'
+                )
+                .addTo(map);
+
+
+            //draw the route to the location
+            var tenx_x = oneBwayFeature.features[0].geometry.coordinates[0];
+            var tenx_y = oneBwayFeature.features[0].geometry.coordinates[1];
+            var feature_x = feature.geometry.coordinates[0];
+            var feature_y = feature.geometry.coordinates[1];
+
+
+            //directions example request.
+            var reqUrl = "https://api.mapbox.com/directions/v5/mapbox/cycling/" + tenx_x + '%2C' + tenx_y + '%3B' + feature_x + '%2C' + feature_y + '?alternatives=false&geometries=geojson&steps=false&access_token=pk.eyJ1IjoiY2l6emxlIiwiYSI6ImNrcDJ0MjhteTE5cGsyb213bms0dHp6c3QifQ.-dc9k9y6KKnDlE5UszjS9A';
+
+        }
+
+        function createClearPopUpG(feature, directionsData) {
+
+            console.log(directionsData);
+            var duration = directionsData.routes[0].legs[0].duration.text;
+            //ADD POP UP
+            // var popUps = document.getElementsByClassName('mapboxgl-popup');
+            // if (popUps[0]) popUps[0].remove();
+
+            var popup = new mapboxgl.Popup({
+                    offset: [0, 0],
+                    className: 'clear-popup'
+                })
+                .setLngLat(feature.geometry.coordinates)
+                .setHTML(
+                    '<h3>' + feature.properties.Name + '</h3>' +
+                    '<h4>' + duration + '</h4>'
+                )
+                .addTo(map);
+
+
+            //draw the route to the location
+            var tenx_x = oneBwayFeature.features[0].geometry.coordinates[0];
+            var tenx_y = oneBwayFeature.features[0].geometry.coordinates[1];
+            var feature_x = feature.geometry.coordinates[0];
+            var feature_y = feature.geometry.coordinates[1];
+
+
+            //directions example request.
+            var reqUrl = "https://api.mapbox.com/directions/v5/mapbox/cycling/" + tenx_x + '%2C' + tenx_y + '%3B' + feature_x + '%2C' + feature_y + '?alternatives=false&geometries=geojson&steps=false&access_token=pk.eyJ1IjoiY2l6emxlIiwiYSI6ImNrcDJ0MjhteTE5cGsyb213bms0dHp6c3QifQ.-dc9k9y6KKnDlE5UszjS9A';
+
+        }
+
+        function addNeighborhoodRoute(d, layerName) {
+
+            var route = d.routes[0].geometry;
+
+            console.log(route);
 
             if (map.getLayer(layerName)) map.removeLayer(layerName);
             if (map.getSource(layerName)) map.removeSource(layerName);
@@ -455,17 +588,60 @@ $(document).ready(function () {
                 'type': 'line',
                 'source': layerName,
                 'layout': {
-                    'line-join': 'round',
-                    'line-cap': 'round'
+                    'line-join': 'miter',
+                    'line-cap': 'square'
                 },
                 'paint': {
-                    'line-color': '#5C6972',
-                    'line-width': 2,
-                    'line-dasharray': [.1, 2]
+                    'line-color': '#595A5C',
+                    'line-width': 1.5,
+                    'line-dasharray': [2, 3],
                 }
             });
 
-            mapLayersAdded.push(layerName);
+            if (!mapLayersAdded.includes(layerName)) {
+                mapLayersAdded.push(layerName);
+            };
+ 
+
+            map.moveLayer(layerName, 'oneBwayPoint');
+        }
+
+        function addNeighborhoodRouteG(route, layerName) {
+
+            layerName = layerName + "G";
+            //console.log(route);
+
+            if (map.getLayer(layerName)) map.removeLayer(layerName);
+            if (map.getSource(layerName)) map.removeSource(layerName);
+
+            map.addSource(layerName, {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': route
+                }
+            });
+
+            map.addLayer({
+                'id': layerName,
+                'type': 'line',
+                'source': layerName,
+                'layout': {
+                    'line-join': 'miter',
+                    'line-cap': 'square'
+                },
+                'paint': {
+                    'line-color': '#595A5C',
+                    'line-width': 1.5,
+                    'line-dasharray': [2, 3],
+                }
+            });
+
+            if (!mapLayersAdded.includes(layerName)) {
+                mapLayersAdded.push(layerName);
+            };
+ 
 
             map.moveLayer(layerName, 'oneBwayPoint');
         }
@@ -505,7 +681,6 @@ $(document).ready(function () {
             map.moveLayer('route', 'oneBwayPoint');
         }
 
-
         function addMarker(d) {
 
             console.log(d)
@@ -536,7 +711,7 @@ $(document).ready(function () {
 
         function createLegend(scale) {
 
-            d3.select('#map-legend').remove();
+            // d3.select('#map-legend').remove();
 
 
             var legend = d3.select("#copy-ux").insert("div", "#controls").attr("id", "map-legend").html('Legend')
@@ -723,8 +898,6 @@ var oneBwayFeature = {
         }
     }]
 }
-
-
 
 var neighborhoodData = {
     "type": "FeatureCollection",
@@ -2309,7 +2482,7 @@ var amenityData = {
                 "drawOrder": null,
                 "icon": null,
                 "category": "Lifestyle",
-                "subcategory": "Health ",
+                "subcategory": "Health",
                 "url": "https://www.fourseasons.com/newyorkdowntown/spa/"
             },
             "geometry": {
@@ -3860,3 +4033,5 @@ var amenityData = {
         }
     ]
 }
+
+
