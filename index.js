@@ -294,7 +294,7 @@ $(document).ready(function () {
                 bearing: 0
             });
 
-
+            transporationLegend()
 
         }
 
@@ -463,6 +463,17 @@ $(document).ready(function () {
                 pitch: 0,
                 bearing: 0
             });
+
+        }
+
+        function transporationLegend() {
+            var legendDiv = d3.select('#map-legend');
+
+
+            var transportationScale =  d3.scaleOrdinal([icon_subway, icon_ferry]).domain(['4-5-6, 1-2-3, N-R, J-Z', 'Staten Island Ferry, NYC Ferry, NY Waterway']);
+
+
+            createLegend(transportationScale, legendDiv);
 
         }
 
@@ -802,7 +813,10 @@ $(document).ready(function () {
 
             console.log(feature);
 
-            createPopUp(feature);
+            if (feature != undefined) {
+                createPopUp(feature);
+            }
+
 
         });
 
