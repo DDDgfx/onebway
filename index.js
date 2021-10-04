@@ -480,9 +480,44 @@ $(document).ready(function () {
         function commuteLegend(directions, placeName) {
             var legendDiv = d3.select('#map-legend');
 
-            console.log(directions.routes[0].legs[0]);
+
+
+            var steps = directions.routes[0].legs[0].steps;
+
+            var transitImages = steps.filter(d => d.transit).map(function(d) {
+                console.log(d);
+
+                return d.transit.line.icon ? d.transit.line.icon : d.transit.line.vehicle.icon;
+
+            })
+
+            console.log(transitImages);
+
             var duration = directions.routes[0].legs[0].duration.text;
-            legendDiv.append('div').classed('legend-item-holder', true).html(duration + ' from ' + placeName);
+
+            
+            var legendItem = legendDiv.append('div').classed('legend-item-holder', true);//legend-item-icon-holder
+
+            var transitIcons  = legendItem.selectAll('.legend-item-icon-holder')
+                .data(transitImages)
+                .join('div').classed('legend-item-icon-holder', true)
+                .append('img')
+                .attr('alt', 'x')
+                .attr('src', d => d);
+
+
+            legendItem.append('d').classed('legend-item-label', true).html(duration + ' from ' + placeName);
+            
+            // transitImages.forEach(function(d) {
+
+            //     legendItem.append('div').classed('legend-item-icon-holder', true).html('text');
+
+            // });
+            
+            //.append('img').attr('alt', 'x').attr('src', d));
+            
+            
+            //legendItem.html(duration + ' from ' + placeName);
 
         }
 
@@ -820,6 +855,8 @@ $(document).ready(function () {
 
         });
 
+
+        
         //LIST UX BEHAVIOR
         var amenityCategoryHeaders = d3.selectAll(".amenity-header");
         var amenityListItems = d3.selectAll(".amenity-item");
